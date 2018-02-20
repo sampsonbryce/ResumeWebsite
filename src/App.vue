@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <header-component />
-    <projects-component />
-    <footer-component />
+    <whatsnew-component />
   </div>
 </template>
 
 <script>
 import HeaderComponent from './components/Header.vue';
+import WhatsnewComponent from './components/WhatsNew.vue';
 import ProjectsComponent from './components/Projects.vue';
 import FooterComponent from './components/Footer.vue';
 
@@ -19,8 +19,7 @@ export default {
   },
   components: {
     HeaderComponent,
-    ProjectsComponent,
-    FooterComponent
+    WhatsnewComponent,
   }
 }
 </script>
@@ -54,7 +53,5 @@ li {
   margin: 0 10px;
 }
 
-a {
-  color: #42b983;
-}
+
 </style>

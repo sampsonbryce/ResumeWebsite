@@ -2,10 +2,15 @@
     <div id='header'>
         <div id='info-container'>
             <h1>BRYCE SAMPSON</h1>
+            <p>The New v2.0</p>
         </div>
         <div id='navigation-container'>
             <ul>
-                <li>Projects</li>
+                <li class="nav-list-item"><a class='nav-link'>What's New?</a></li>
+                <li class="nav-list-item"><a class='nav-link'>Documentation</a></li>
+                <li class="nav-list-item"><a class='nav-link'>Use Cases</a></li>
+                <li class="nav-list-item"><a class='nav-link'>Supporters</a></li>
+                <li class="nav-list-item"><a class='nav-link'>Contact</a></li>
             </ul>
         </div>
     </div>
@@ -28,8 +33,6 @@ export default {
     display: grid;
     grid-template-columns: 200px auto 200px;
     grid-template-rows: 100%;
-    // grid-template-areas:
-        // ". info nav";
 }
 
 #info-container {
@@ -43,5 +46,27 @@ export default {
     grid-area: "nav";
     grid-column: 3 / 4;
     align-self: center;
+}
+
+.nav-list-item{
+    display:flex;
+    justify-content: flex-end;
+    width:100%;
+    margin: 10px 0 0 0;
+    
+}
+
+.nav-link{
+    flex:1;
+    text-align:right;
+    margin-left:50px;
+    padding: 10px 10px 10px 0;
+    border: 1px solid white;
+    border-right: none;
+    transition: margin-left .7s ease 0s;
+    cursor: pointer;
+    &:hover{
+        margin-left: 0;
+    }
 }
 </style>
