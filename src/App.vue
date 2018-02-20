@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <header-component />
+    <qualifications-component />
     <whatsnew-component />
   </div>
 </template>
@@ -9,7 +10,7 @@
 import HeaderComponent from './components/Header.vue';
 import WhatsnewComponent from './components/WhatsNew.vue';
 import ProjectsComponent from './components/Projects.vue';
-import FooterComponent from './components/Footer.vue';
+import QualificationsComponent from './components/Qualifications.vue';
 
 export default {
   name: 'app',
@@ -19,6 +20,7 @@ export default {
   },
   components: {
     HeaderComponent,
+    QualificationsComponent,
     WhatsnewComponent,
   }
 }

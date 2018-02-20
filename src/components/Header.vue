@@ -2,13 +2,14 @@
     <div id='header'>
         <div id='info-container'>
             <h1>BRYCE SAMPSON</h1>
-            <p>The New v2.0</p>
+            <p>The New v4.0</p>
+            <p>The ultimate build tool! Why? Because it builds stuff. 'Nuff said!</p>
         </div>
         <div id='navigation-container'>
             <ul>
+                <li class="nav-list-item"><a class='nav-link'>Qualifications</a></li>
                 <li class="nav-list-item"><a class='nav-link'>What's New?</a></li>
                 <li class="nav-list-item"><a class='nav-link'>Documentation</a></li>
-                <li class="nav-list-item"><a class='nav-link'>Use Cases</a></li>
                 <li class="nav-list-item"><a class='nav-link'>Supporters</a></li>
                 <li class="nav-list-item"><a class='nav-link'>Contact</a></li>
             </ul>
