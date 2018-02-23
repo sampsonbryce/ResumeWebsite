@@ -1,12 +1,12 @@
 <template>
-<div>
-    Footer
+<div id="supporters">
+    Supporters
 </div>
 </template>
 
 <script>
 export default {
-    name: "footer-component",
+    name: "supporters-component",
     data(){
         return {
 
@@ -16,4 +16,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#supporters{
+    height: 100vh;
+}
 </style>

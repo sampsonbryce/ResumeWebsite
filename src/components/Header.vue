@@ -7,11 +7,11 @@
         </div>
         <div id='navigation-container'>
             <ul>
-                <li class="nav-list-item"><a class='nav-link'>Qualifications</a></li>
-                <li class="nav-list-item"><a class='nav-link'>What's New?</a></li>
-                <li class="nav-list-item"><a class='nav-link'>Documentation</a></li>
-                <li class="nav-list-item"><a class='nav-link'>Supporters</a></li>
-                <li class="nav-list-item"><a class='nav-link'>Contact</a></li>
+                <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#qualifications')">Qualifications</a></li>
+                <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#whatsnew')">What's New?</a></li>
+                <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#documentation')">Documentation</a></li>
+                <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#supporters')">Supporters</a></li>
+                <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#contact')">Contact</a></li>
             </ul>
         </div>
     </div>
@@ -23,14 +23,20 @@ export default {
     data(){
         return {
         }
-    }
+    },
+    methods: {
+        scrollTo: function scrollTo(element){
+            console.log('scrolling to', element)
+            this.$scrollTo(element, 1000, { easing: 'ease' });
+        }
+    },
 }
 </script>
 
 <style lang="scss">
 #header {
     height: 100vh;
-    background: black;
+    background: $secondary;
     display: grid;
     grid-template-columns: 200px auto 200px;
     grid-template-rows: 100%;

@@ -3,14 +3,19 @@
     <header-component />
     <qualifications-component />
     <whatsnew-component />
+    <documentation-component />
+    <supporters-component />
+    <contact-component />
   </div>
 </template>
 
 <script>
 import HeaderComponent from './components/Header.vue';
 import WhatsnewComponent from './components/WhatsNew.vue';
-import ProjectsComponent from './components/Projects.vue';
 import QualificationsComponent from './components/Qualifications.vue';
+import DocumentationComponent from './components/Documentation.vue';
+import SupportersComponent from './components/Supporters.vue';
+import ContactComponent from './components/Contact.vue';
 
 export default {
   name: 'app',
@@ -22,6 +27,9 @@ export default {
     HeaderComponent,
     QualificationsComponent,
     WhatsnewComponent,
+    DocumentationComponent,
+    SupportersComponent,
+    ContactComponent
   }
 }
 </script>
@@ -55,5 +63,8 @@ li {
   margin: 0 10px;
 }
 
+a{
+  text-decoration:none;
+}
 
 </style>
