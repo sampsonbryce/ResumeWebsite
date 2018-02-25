@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <header-component />
-    <qualifications-component />
+    <!-- <qualifications-component />
     <whatsnew-component />
     <documentation-component />
     <supporters-component />
-    <contact-component />
+    <contact-component /> -->
   </div>
 </template>
 
@@ -37,6 +37,8 @@ export default {
 <style lang="scss">
 
 html,body{
+  width:100%;
+  height:100%;
   margin: 0;
 }
 
@@ -71,5 +73,4 @@ li {
 a{
   text-decoration:none;
 }
-
 </style>

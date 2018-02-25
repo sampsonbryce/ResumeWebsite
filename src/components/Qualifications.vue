@@ -49,10 +49,13 @@ export default {
 #content{
     width:50%;
     margin-left:25%;
+    @media (max-width: $phone){
+        margin: 0;
+        width:100%;
+    }
 }
 
 #qualifications{
-    // background: #f0db4f;
     background: white;
     color: $secondary;
     height:100vh;
@@ -74,9 +77,14 @@ export default {
         display: grid;
         justify-items: center;
     }
+    
+
 }
 #about{
     width:60%;
+    @media (max-width: $phone){
+        width:100%;
+    }
 }
 #university-container{
     height: 100%;

@@ -99,7 +99,7 @@ export default {
 <style lang="scss" scoped>
 
 .uncover-enter-active, .uncover-leave-active{
-    transition: flex .5s ease !important;
+    transition: flex 5s ease !important;
 }
 .uncover-enter, .uncover-leave-to{
     flex:0 !important;

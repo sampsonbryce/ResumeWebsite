@@ -83,7 +83,6 @@ export default {
 #confused{
     display:flex;
     flex-direction:column;
-    justify-content: center;
     & h3{
     } 
     & a{
@@ -96,7 +95,7 @@ export default {
 }
 
 #version-question{
-    flex:1;
+    flex: 1;
     display: grid;
     align-items:center;
     & div *{
@@ -113,12 +112,12 @@ export default {
 }
 
 .slide-enter-active, .slide-leave-active{
-    transition: flex .5s ease !important;
+    transition: flex 25s ease;
 }
 .slide-enter, .slide-leave-to{
-    flex:0 !important;
+    flex: 1;
 }
 .slide-enter-to, .slide-leave{
-    flex: 1 !important;
+    flex:0;
 }
 </style>
