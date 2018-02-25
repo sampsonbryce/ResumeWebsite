@@ -47,6 +47,10 @@ export default {
     }
     display:grid;
     align-items:center; 
+
+    @media (max-width: $phone){
+        height: auto;
+    }
 }
 
 #item-container {
@@ -54,6 +58,11 @@ export default {
     justify-content: center;
     flex-wrap: wrap;
     padding: 0 25% 0 25%;
+    @media (max-width: $phone){
+        flex-direction:column;
+        flex-wrap: none;
+        padding: 0;
+    }
 }
 
 .new-item{
@@ -68,6 +77,10 @@ export default {
 
     & img{
         height: 100px;;
+    }
+
+    @media (max-width: $phone){
+        width: 90%;
     }
 }
 </style>

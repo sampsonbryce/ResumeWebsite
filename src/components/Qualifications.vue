@@ -78,12 +78,15 @@ export default {
         justify-items: center;
     }
     
+    @media (max-width: $phone){
+        height: auto;
+    }
 
 }
 #about{
     width:60%;
     @media (max-width: $phone){
-        width:100%;
+        width:90%;
     }
 }
 #university-container{
@@ -94,6 +97,10 @@ export default {
     grid-template-rows: 100%;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    @media (max-width: $phone){
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr;
+    }
 }
 
 #chico-image{
@@ -107,6 +114,12 @@ export default {
     display: grid;
     align-items: center;
     justify-items:center;
+    @media (max-width: $phone){
+        height:150px;
+        & img{
+            height:100px;
+        }
+    }
 }
 #benchmarks {
     & h3{

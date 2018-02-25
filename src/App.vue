@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <header-component />
-    <!-- <qualifications-component />
+    <qualifications-component />
     <whatsnew-component />
     <documentation-component />
-    <supporters-component />
+    <!-- <supporters-component />
     <contact-component /> -->
   </div>
 </template>
@@ -56,6 +56,9 @@ h1 {
   font-size:2rem;
   &.large{
     font-size:3rem;
+    @media (max-width: $phone){
+      font-size: 2rem;
+    }
   }
 }
 

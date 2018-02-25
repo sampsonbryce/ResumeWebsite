@@ -113,6 +113,9 @@ export default {
     height:100vh;
     display:grid;
     grid-template-rows: 30% 70%;
+    @media (max-width: $phone){
+        height: auto;
+    }
 }
 
 .code{
@@ -123,6 +126,12 @@ export default {
 
 #go-button{
     padding: 10px;
+
+    @media (max-width: $phone){
+        margin: 10px;
+        width:90%;
+        display:block;
+    }
 }
 
 #examples{
@@ -135,6 +144,11 @@ export default {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 100%;
     flex:1;
+
+    @media (max-width: $phone){
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
 }
 
 .button{
