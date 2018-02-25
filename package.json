@@ -10,6 +10,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "copy-text-to-clipboard": "^1.0.4",
     "sass-resources-loader": "^1.3.2",
     "vue": "^2.5.11",
     "vue-awesome": "^2.3.4",

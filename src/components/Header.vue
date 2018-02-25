@@ -1,7 +1,7 @@
 <template>
     <div id='header'>
         <div id='info-container'>
-            <h1>BRYCE SAMPSON</h1>
+            <h1 class='large'>BRYCE SAMPSON</h1>
             <p>The New v4.0</p>
             <p>The ultimate build tool! Why? Because it builds stuff. 'Nuff said!</p>
         </div>
@@ -26,7 +26,6 @@ export default {
     },
     methods: {
         scrollTo: function scrollTo(element){
-            console.log('scrolling to', element)
             this.$scrollTo(element, 1000, { easing: 'ease' });
         }
     },
@@ -74,6 +73,7 @@ export default {
     cursor: pointer;
     &:hover{
         margin-left: 0;
+        color: $primary;
     }
 }
 </style>

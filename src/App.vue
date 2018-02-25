@@ -49,9 +49,14 @@ html,body{
   margin: 0;
 }
 
-h1, h2 {
-  font-weight: normal;
+h1 {
+  font-weight: 200;
+  font-size:2rem;
+  &.large{
+    font-size:3rem;
+  }
 }
+
 
 ul {
   list-style-type: none;

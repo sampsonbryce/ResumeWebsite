@@ -1,6 +1,9 @@
 <template>
 <div id='whatsnew'>
-    <h1>WHAT'S NEW?</h1>
+    <div>
+        <h1 class='large'>WHAT'S NEW?</h1>
+        <h3>In v4.0</h3>
+    </div>
     <div id='item-container'>
         <div class="new-item">
             <img src="~images/python.png" />
@@ -36,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 #whatsnew{
-    background: #40e5d4;
+    background: $primary;
     color: black;
     height:100vh;
     & h1{
@@ -48,15 +51,15 @@ export default {
 
 #item-container {
     display:flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 25% 0 25%;
 }
 
 .new-item{
-    flex:1;
-    border:1px solid black;
-    box-shadow: 5px 5px;
-    border-radius: 2px;
-    margin: 0 10px 0 10px;
+    width: 500px;
+    box-shadow: 5px 5px $secondary;
+    margin: 10px;
     padding:10px;
     background: white;
     display:grid;

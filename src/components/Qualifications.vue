@@ -1,7 +1,8 @@
 <template>
+<div id='content'>
 <div id='qualifications'>
     <div>
-        <h1>QUALIFICATIONS</h1>
+        <h1 class='large'>QUALIFICATIONS</h1>
         <h3>Built to be fast</h3>
         <p id="about">Since its conception in small town in northern California, Mount Shasta, the goal has always been to build anything and everything with the hopes that one day something would stick and impact the world at large.
             Recently that goal has changed slightly. We have shifted towards impacting the world through more noble causes from charitable work to dreams of being part of a space exploration team to benefitting the scientific community through
@@ -30,6 +31,7 @@
         <p>Cummulative GPA: 3.77</p>
     </div>
 </div>
+</div>
 </template>
 
 <script>
@@ -44,19 +46,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#content{
+    width:50%;
+    margin-left:25%;
+}
 
 #qualifications{
     // background: #f0db4f;
-    background: $thirdary;
+    background: white;
     color: $secondary;
     height:100vh;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 1fr 2fr 1fr;
+    justify-items: center;
     align-items: center;
     & h1{
         display: inline-block;
         margin-bottom:0px;
+        color: $primary;
+        font-weight: 200;
     }
     & h3{
         margin-top:5px;

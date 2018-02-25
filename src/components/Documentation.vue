@@ -1,12 +1,12 @@
 <template>
 <div id='documentation'>
     <div>
-        <h1>DOCUMENTATION</h1>
+        <h1 class='large'>DOCUMENTATION</h1>
         <div id='getting-started'>
             <h3>Getting Started</h3>
             <p>If you are interested in adding Bryce to your stack then just use this command and it will handle everything for you!</p>
             <span class='code'>$> ./contact-bryce.sh --priority=high</span>
-            <a id='go-button' class="button">Try It!</a>
+            <a id='go-button' class="button" @click='$scrollTo("#contact", 1000)'>Try It!</a>
         </div>
     </div>
     <div id='examples'>
@@ -42,28 +42,28 @@
         <transition name="uncover">
             <div v-if="example != 0" id='selected-example'>
                 <div v-if="example == 1" class="selected-example-item">
-                    <a class='button with-icon' href="https://home.heroinc.io" target="_blank"><icon name="external-link" /></a>
+                    <a class='button with-icon white' href="https://home.heroinc.io" target="_blank"><icon name="external-link" /></a>
                     <p>A very recent example of software built with v4.0, HeroHome is a webpage and Chrome extension intended to be used as a replacement for your New Tab. The page will display ads while you open new tabs and search, all proceeds of which 
                         will be directed to charity. This particular implementation uses Node.js and Express as well as the new Vue.js features implemented in v4.0!
                     </p>
                 </div>
 
                 <div v-if="example == 2" class="selected-example-item">
-                    <a class='button with-icon' href="https://github.com/sampsonbryce/DayInTheLife" target="_blank"><icon name="github" /></a>
+                    <a class='button with-icon white' href="https://github.com/sampsonbryce/DayInTheLife" target="_blank"><icon name="github" /></a>
                     <p>Another more recent expedition into the v4.0 Vue.js feature, DayInTheLife was intended as a blog for the Bryce project. It was built using Node.js and Vue.js, resulting in the features now included in v4.0. Unfortunately the site 
                         had very little popularity and was taken down for cost reasons.
                     </p>
                 </div>
 
                 <div v-if="example == 3" class="selected-example-item">
-                    <a class='button with-icon' href="https://github.com/sampsonbryce/datasift-visualization" target="_blank"><icon name="github" /></a>
+                    <a class='button with-icon white' href="https://github.com/sampsonbryce/datasift-visualization" target="_blank"><icon name="github" /></a>
                     <p> Another JavaScript project, DataSift was intended as a prototype for an idea that relied on the DataSift API. It was rather simple but used D3 for the visualization which was new ground for the Bryce build tool.  
                     </p>
                 </div>
             </div>
         </transition>
         <div id='more-examples'>
-            <h3>Find more examples and usable code here <a class='button with-icon' href="https://github.com/sampsonbryce" target="_blank"><icon name="github" /></a></h3>
+            <h3>Find more examples and usable code here <a class='button with-icon white' href="https://github.com/sampsonbryce" target="_blank"><icon name="github" /></a></h3>
         </div>
     </div>
 </div>
@@ -139,10 +139,9 @@ export default {
 
 .button{
     display:inline-block;
-    border: 1px solid black;
-    border-radius:4px;
+    border-radius:1px;
     color:black;
-    background:white;
+    background:$primary;
     cursor: pointer;
     transition: background .3s ease, color .3s ease;
 
@@ -151,8 +150,17 @@ export default {
     }
 
     &:hover{
-        background: black;
+        background: $secondary;
         color:white;
+    }
+    &.white{
+        background: $secondary;
+        color:white;
+        border: 1px solid $secondary;
+        &:hover{
+            background: white;
+            color:$secondary;
+        }
     }
 }
 
