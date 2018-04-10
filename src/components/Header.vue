@@ -61,9 +61,11 @@ export default {
 }
 
 #nav-toggle{
-    position:absolute;
-    top: 10px;
-    right: 10px;
+    position:fixed;
+    top: 0px;
+    right: 0px;
+    background: $secondary;
+    padding: 10px;
 }
 
 #navigation-container{
@@ -106,6 +108,14 @@ export default {
         margin-left: 0;
         color: $primary;
     }
+
+    @media (max-width: $phone){
+        &:hover{
+            margin-left: 0;
+            color: $secondary;
+        }
+    }
+
 }
 
 

@@ -56,11 +56,12 @@ export default {
 #item-container {
     display:flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    padding: 0 25% 0 25%;
+    // padding: 0 25% 0 25%;
     @media (max-width: $phone){
         flex-direction:column;
-        flex-wrap: none;
+        flex-wrap: nowrap;
         padding: 0;
     }
 }

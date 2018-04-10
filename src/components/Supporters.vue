@@ -34,13 +34,11 @@
                 <a @click='(confused ? confused = false : confused = true)'><icon name='question-circle' scale='2'/></a>
             </div>
         </div>
-        <transition name='slide'>
-            <div v-if='confused' id='version-explanation'>
-                <p>Verison are just a fun way to indicate what I learned and when. For example v0.1 is starting college where we were taught C and C++ while v1 was my first internship (Lawrence Livermore) where I learned most of my python knowledge. v2
-                    indicates my second job (SocialHighRise) and v3 inidcates my 3rd (Workday). v4 indicates what version I am currently.
-                </p>
-            </div>
-        </transition>
+        <div v-if='confused' id='version-explanation'>
+            <p>Verison are just a fun way to indicate what I learned and when. For example v0.1 is starting college where we were taught C and C++ while v1 was my first internship (Lawrence Livermore) where I learned most of my python knowledge. v2
+                indicates my second job (SocialHighRise) and v3 inidcates my 3rd (Workday). v4 indicates what version I am currently.
+            </p>
+        </div>
     </div>
 </div>
 </template>
@@ -61,10 +59,17 @@ export default {
     display:grid;
     grid-template-rows: 30% 40% 30%;
     align-items:center;
+    @media (max-width: $phone){
+        height: auto;
+    }
 }
 #supporters-container{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
+    @media (max-width: $phone){
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 100%;
+    }
 }
 
 .supporter{
@@ -109,6 +114,14 @@ export default {
     width: 50%;
     margin-left:25%;
     overflow: hidden;
+    @media (max-width: $phone){
+        width: 100%;
+        margin: 0;
+        & > p{
+            padding: 0 20px 0 20px;
+        }
+    }
+
 }
 
 .slide-enter-active, .slide-leave-active{

@@ -4,8 +4,8 @@
     <qualifications-component />
     <whatsnew-component />
     <documentation-component />
-    <!-- <supporters-component />
-    <contact-component /> -->
+    <supporters-component />
+    <contact-component />
   </div>
 </template>
 

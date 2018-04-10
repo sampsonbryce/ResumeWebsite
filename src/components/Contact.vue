@@ -53,6 +53,7 @@ export default {
 .button {
     cursor: pointer;
     width: 300px;
+    margin-top: 5px;
     display: inline-block;
     padding: 15px;
     border: 1px solid $secondary;
