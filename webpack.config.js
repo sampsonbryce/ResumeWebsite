@@ -1,11 +1,17 @@
 var path = require('path')
 var webpack = require('webpack')
 
+if(process.env.NODE_ENV == 'production'){
+	out_path = '/data/brycethebuilder'
+}else{
+	out_path = path.resolve(__dirname, './dist')
+}
+
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    path: out_path,
+    // publicPath: '/dist/',
     filename: 'build.js'
   },
   module: {
