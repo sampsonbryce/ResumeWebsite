@@ -117,7 +117,10 @@ if (process.env.NODE_ENV === 'production') {
     new UglifyJsPlugin({
       sourceMap: true,
       uglifyOptions: {
-        compress: true
+        ecma:8,
+        compress: {
+          warnings: false
+        }
       }
     }),
     new webpack.LoaderOptionsPlugin({
