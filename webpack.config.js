@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 if(process.env.NODE_ENV == 'production'){
 	out_path = '/data/brycethebuilder'
