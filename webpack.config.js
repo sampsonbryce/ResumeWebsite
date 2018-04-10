@@ -15,6 +15,13 @@ module.exports = {
     // publicPath: '/dist/',
     filename: 'build.js'
   },
+  plugins:[
+    new HtmlWebpackPlugin({
+      title: "Bryce The Builder",
+      //favicon: "./src/assets/images/icons/LogoMedium.png",
+      inject: false
+    })
+  ],
   module: {
     rules: [
       {
