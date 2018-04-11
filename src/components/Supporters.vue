@@ -54,7 +54,7 @@ export default {
 }
 </script> <style lang="scss" scoped>
 #supporters{
-    height: 100vh;
+    min-height: 100vh;
     background: $secondary;
     display:grid;
     grid-template-rows: 30% 40% 30%;

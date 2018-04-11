@@ -14,7 +14,7 @@
         </a>
         <a class='button' target='_blank' href='https://facebook.com/bryce.sampson.3'>
             <icon name='facebook-official' scale='1.5'/>
-            <span class='text'>Bryce Sampson</span>
+            <span class='text'>bryce.sampson.3</span>
         </a>
         <a class='button' target='_blank' href='https://www.linkedin.com/in/bryce-sampson-a497a5b1/'>
             <icon name='linkedin-square' scale='1.5'/>

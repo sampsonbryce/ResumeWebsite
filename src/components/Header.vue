@@ -5,7 +5,7 @@
             <p>The New v4.0</p>
             <p>The ultimate build tool! Why? Because it builds stuff. 'Nuff said!</p>
         </div>
-        <a @click="(showNav ? showNav = false : showNav = true)" id='nav-toggle'><icon name='bars' /></a>
+        <a @click="(showNav ? showNav = false : showNav = true)" id='nav-toggle' v-bind:class='{ extendtoggle: showNav }'><icon name='bars' /></a>
         <div id='navigation-container' v-bind:class='{ showsidebar : showNav }'>
             <ul>
                 <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#qualifications')">Qualifications</a></li>
@@ -36,7 +36,7 @@ export default {
 
 <style lang="scss">
 #header {
-    height: 100vh;
+    min-height: 100vh;
     background: $secondary;
     display: grid;
     grid-template-columns: 200px auto 200px;
@@ -48,7 +48,6 @@ export default {
 
     & .showsidebar{
         @media (max-width: $phone){
-            // width:200px;
             right: 0;
         }
     }
@@ -61,11 +60,16 @@ export default {
 }
 
 #nav-toggle{
+    display:none;
     position:fixed;
     top: 0px;
     right: 0px;
     background: $secondary;
     padding: 10px;
+    transition: right .5 ease;
+    @media (max-width: $phone){
+        display:block;
+    }
 }
 
 #navigation-container{
@@ -73,19 +77,20 @@ export default {
     grid-column: 3 / 4;
     align-self: center;
     @media (max-width: $phone){
-        height:100vh;
-        background:$primary;
+        & > ul {
+            margin-left: 1em;
+        }
+        height:auto;
+        background:$secondary;
         position:fixed;
         top:40px;
         right: -200px;
         z-index: 1;
-        width: 200px;
+        width: 170px;
         overflow-x:hidden;
         transition: right .5s ease;
     }
 }
-
-
 
 .nav-list-item{
     display:flex;
@@ -110,10 +115,7 @@ export default {
     }
 
     @media (max-width: $phone){
-        &:hover{
-            margin-left: 0;
-            color: $secondary;
-        }
+        margin-left: 0;
     }
 
 }

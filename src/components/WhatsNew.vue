@@ -7,7 +7,7 @@
     <div id='item-container'>
         <div class="new-item">
             <img src="~images/python.png" />
-        <p>Building on eleven months of on the job python experience and numerouse occasions where quick scripting was effectively applied, v4.0 includes new and improved python language skills for speedy development. 
+        <p>Building on eleven months of on the job python experience and numerous occasions where quick scripting was effectively applied, v4.0 includes new and improved python language skills for speedy development. 
         You might wonder "Why Python?". The simple answer is it gets the job done in the shortest amount of time possible!</p>
         </div>
         <div class="new-item">
@@ -41,16 +41,12 @@ export default {
 #whatsnew{
     background: $primary;
     color: black;
-    height:100vh;
+    min-height:100vh;
     & h1{
         display: inline-block;
     }
     display:grid;
     align-items:center; 
-
-    @media (max-width: $phone){
-        height: auto;
-    }
 }
 
 #item-container {
@@ -58,7 +54,6 @@ export default {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    // padding: 0 25% 0 25%;
     @media (max-width: $phone){
         flex-direction:column;
         flex-wrap: nowrap;
@@ -68,10 +63,11 @@ export default {
 
 .new-item{
     width: 500px;
-    box-shadow: 5px 5px $secondary;
+    height: 400px;
     margin: 10px;
     padding:10px;
-    background: white;
+    background: $secondary;
+    color: white;
     display:grid;
     justify-items:center;
     align-items:center; 
@@ -83,5 +79,6 @@ export default {
     @media (max-width: $phone){
         width: 90%;
     }
+    
 }
 </style>

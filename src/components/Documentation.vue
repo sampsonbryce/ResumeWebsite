@@ -121,11 +121,6 @@ export default {
                 }, 500)
             }
         },
-    },
-    mounted(){
-        setInterval(() =>{
-            console.log(this.$mq.current);
-        }, 1000)
     }
 }
 </script> 
@@ -153,7 +148,7 @@ export default {
 
 #documentation{
     color:black;
-    height:100vh;
+    min-height:100vh;
     display:grid;
     grid-template-rows: 30% 70%;
     @media (max-width: $phone){

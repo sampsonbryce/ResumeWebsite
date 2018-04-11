@@ -46,19 +46,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#content{
-    // width:50%;
-    // margin-left:25%;
-    @media (max-width: $phone){
-        // margin: 0;
-        // width:100%;
-    }
-}
 
 #qualifications{
     background: white;
     color: $secondary;
-    height:100vh;
+    min-height:100vh;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 1fr 2fr 1fr;
