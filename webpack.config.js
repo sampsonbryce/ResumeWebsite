@@ -19,8 +19,10 @@ module.exports = {
   plugins:[
     new HtmlWebpackPlugin({
       title: "Bryce The Builder",
+      meta: {
+        viewport: 'width=device-width,initial-scale=1.0'
+      }
       //favicon: "./src/assets/images/icons/LogoMedium.png",
-      inject: false
     })
   ],
   module: {
