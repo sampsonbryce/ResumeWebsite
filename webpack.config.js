@@ -19,10 +19,11 @@ module.exports = {
   plugins:[
     new HtmlWebpackPlugin({
       title: "Bryce The Builder",
+      template: 'gen-temp.ejs',
       meta: {
         viewport: 'width=device-width,initial-scale=1.0'
-      }
-      //favicon: "./src/assets/images/icons/LogoMedium.png",
+      },
+      favicon: "./src/assets/images/favicon.png",
     })
   ],
   module: {
