@@ -2,12 +2,12 @@
 <div id='documentation'>
     <div>
         <h1 class='large'>DOCUMENTATION</h1>
-        <div id='getting-started'>
-            <h3>Getting Started</h3>
-            <p>If you are interested in adding Bryce to your stack then just use this command and it will handle everything for you!</p>
-            <span class='code'>$> ./contact-bryce.sh --priority=high</span>
-            <a id='go-button' class="button" @click='$scrollTo("#contact", 1000)'>Try It!</a>
-        </div>
+    </div>
+    <div id='getting-started'>
+        <h3>Getting Started</h3>
+        <p>If you are interested in adding Bryce to your stack then just use this command and it will handle everything for you!</p>
+        <span class='code'>$> ./contact-bryce.sh --priority=high</span>
+        <a id='go-button' class="button" @click='$scrollTo("#contact", 1000)'>Try It!</a>
     </div>
     <div id='examples'>
         <h3>Examples</h3>
@@ -150,6 +150,7 @@ export default {
     color:black;
     min-height:100vh;
     display:grid;
+    align-items:center;
     grid-template-rows: 30% 70%;
     @media (max-width: $phone){
         height: auto;

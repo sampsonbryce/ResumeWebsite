@@ -12,6 +12,10 @@
             <icon name='github-square' scale='1.5' />
             <span class='text'>sampsonbryce</span>
         </a>
+        <a class='button' target='_blank' href='https://github.com/sampsonbryce/LatexResume/blob/master/Resume_Bryce_Sampson_Technical.pdf'>
+            <icon name='file' scale='1.5'/>
+            <span class='text'>Resume</span>
+        </a>
         <a class='button' target='_blank' href='https://facebook.com/bryce.sampson.3'>
             <icon name='facebook-official' scale='1.5'/>
             <span class='text'>bryce.sampson.3</span>
