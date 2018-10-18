@@ -6,11 +6,9 @@
     <div id='supporters-container'>
         <div class='supporter'>
             <img src="~images/dbh_logo.svg" />
-            <h2>Workday</h2>
-            <h3>Environment Engineer Intern | v3 | May - August 2017</h3>
-            <p>- Developed python and bash program for automated client sftp site management(creation/removal/user provisioning)</p>
-            <p>- Supported Sales team with environment cloning and provisioning</p>
-            <p>- Shadowed Automation Team, DB Administrators, Performance Team and Network Operations Center</p>
+            <h2>Design By Humans</h2>
+            <h3>Junior Front-End Engineer | v4 | August 2018 - Current</h3>
+            <p>- Develop web pages based on designer mockups, refactor backend code, and implement new features both customer facing and internal</p>
         </div>
         <div class='supporter'>
             <img src="~images/wday_logo.png" />
