@@ -1,7 +1,7 @@
 {
   "name": "resumewebsite",
   "description": "Vue.js Resume Website",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Bryce Sampson <sampson.bryce@yahoo.com>",
   "license": "MIT",
   "private": true,

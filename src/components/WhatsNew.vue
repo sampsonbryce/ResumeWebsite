@@ -47,6 +47,7 @@ export default {
     }
     display:grid;
     align-items:center; 
+    padding:10px;
 }
 
 #item-container {
@@ -57,27 +58,29 @@ export default {
     @media (max-width: $phone){
         flex-direction:column;
         flex-wrap: nowrap;
-        padding: 0;
+        padding: 10px;
     }
 }
 
 .new-item{
-    width: 500px;
-    height: 400px;
+    max-width:400px;
+    // min-height: 400px;
     margin: 10px;
     padding:10px;
     background: $secondary;
     color: white;
-    display:grid;
-    justify-items:center;
-    align-items:center; 
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:center;
 
     & img{
-        height: 100px;;
+        max-height:90px;
     }
 
     @media (max-width: $phone){
-        width: 90%;
+        width: auto;
+        margin:10px 0;
     }
     
 }

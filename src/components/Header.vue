@@ -51,6 +51,7 @@ export default {
             right: 0;
         }
     }
+    padding:10px;
 }
 
 #info-container {

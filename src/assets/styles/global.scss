@@ -1,3 +1,9 @@
 $primary: #de4f4f;
 $secondary: #2b2e39;
 $phone: 768px;
+$section_width: 1200px;
+
+*, *:after, *:before{
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+}

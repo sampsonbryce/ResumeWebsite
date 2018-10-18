@@ -155,6 +155,7 @@ export default {
     @media (max-width: $phone){
         height: auto;
     }
+    padding:10px;
 }
 
 .code{

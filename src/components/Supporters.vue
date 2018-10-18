@@ -5,6 +5,14 @@
     </div>
     <div id='supporters-container'>
         <div class='supporter'>
+            <img src="~images/dbh_logo.svg" />
+            <h2>Workday</h2>
+            <h3>Environment Engineer Intern | v3 | May - August 2017</h3>
+            <p>- Developed python and bash program for automated client sftp site management(creation/removal/user provisioning)</p>
+            <p>- Supported Sales team with environment cloning and provisioning</p>
+            <p>- Shadowed Automation Team, DB Administrators, Performance Team and Network Operations Center</p>
+        </div>
+        <div class='supporter'>
             <img src="~images/wday_logo.png" />
             <h2>Workday</h2>
             <h3>Environment Engineer Intern | v3 | May - August 2017</h3>
@@ -62,18 +70,18 @@ export default {
     @media (max-width: $phone){
         height: auto;
     }
+    padding:10px;
 }
+
 #supporters-container{
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    @media (max-width: $phone){
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-columns: 100%;
-    }
+    display:flex;
+    flex-wrap:wrap; 
+    justify-content: center;
 }
 
 .supporter{
     margin: 10px;
+    width:700px;
     & h3{
         color: $primary;
     }
@@ -82,6 +90,9 @@ export default {
     }
     & img{
         height: 100px;
+    }
+    @media(max-width: $phone){
+        width:auto;
     }
 }
 

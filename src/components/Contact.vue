@@ -53,7 +53,9 @@ export default {
     color:white;
     display: grid;
     align-items:center;
+    padding:10px;
 }
+
 .button {
     cursor: pointer;
     width: 300px;
