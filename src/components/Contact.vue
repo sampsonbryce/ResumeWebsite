@@ -48,6 +48,7 @@ export default {
 
 <style lang="scss" scoped>
 #contact{
+    width:100%;
     height:500px;
     background: $primary;
     color:white;

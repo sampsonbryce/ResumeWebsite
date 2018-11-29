@@ -86,6 +86,7 @@ module.exports = {
         options: {
           presets: ['env']
         },
+        include: [resolve('src'), resolve('test'), resolve('node_modules/vue-echarts-v3/src')],
         exclude: /node_modules/
       },
       {

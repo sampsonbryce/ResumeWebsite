@@ -1,49 +1,51 @@
 <template>
-<div id="supporters">
-    <div>
-        <h1 class='large'>SUPPORTERS</h1>
-    </div>
-    <div id='supporters-container'>
-        <div class='supporter'>
-            <img src="~images/dbh_logo.svg" />
-            <h2>Design By Humans</h2>
-            <h3>Junior Front-End Engineer | v4 | August 2018 - Current</h3>
-            <p>- Develop web pages based on designer mockups, refactor backend code, and implement new features both customer facing and internal</p>
+<div class='container'>
+    <div id='supporters' class='section'>
+        <div>
+            <h1 class='large'>SUPPORTERS</h1>
         </div>
-        <div class='supporter'>
-            <img src="~images/wday_logo.png" />
-            <h2>Workday</h2>
-            <h3>Environment Engineer Intern | v3 | May - August 2017</h3>
-            <p>- Developed python and bash program for automated client sftp site management(creation/removal/user provisioning)</p>
-            <p>- Supported Sales team with environment cloning and provisioning</p>
-            <p>- Shadowed Automation Team, DB Administrators, Performance Team and Network Operations Center</p>
-        </div>
-        <div class='supporter'>
-            <img src="~images/shr_logo.jpg" />
-            <h2>SocialHighRise</h2>
-            <h3>Software Developer Intern | v2 | August 2016 - May 2017</h3>
-            <p>- Developed in-house account management tool to aggregate social media client data</p>
-            <p>- Handled development and maintenance of company website</p>
-        </div>
-        <div class='supporter'>
-            <img src="~images/llnl_logo.jpg" />
-            <h2>Lawrence Livermore National Laboratory</h2>
-            <h3>Computation Intern | v1 | January 2016 - August 2016</h3>
-            <p>- Developed User Interface in PyQt for the labs large scale climate data processing library</p>
-            <p>- Rebuilt the User Interface in React/Redux (JavaScript provided significantly faster graphics)</p>
-        </div>
-    </div>
-    <div id='confused'>
-        <div id='version-question'>
-            <div>
-                <h3>Confused by the versions?</h3>
-                <a @click='(confused ? confused = false : confused = true)'><icon name='question-circle' scale='2'/></a>
+        <div id='supporters-container'>
+            <div class='supporter'>
+                <img src="~images/dbh_logo.svg" />
+                <h2>Design By Humans</h2>
+                <h3>Junior Front-End Engineer | v4 | August 2018 - Current</h3>
+                <p>- Develop web pages based on designer mockups, refactor backend code, and implement new features both customer facing and internal</p>
+            </div>
+            <div class='supporter'>
+                <img src="~images/wday_logo.png" />
+                <h2>Workday</h2>
+                <h3>Environment Engineer Intern | v3 | May - August 2017</h3>
+                <p>- Developed python and bash program for automated client sftp site management(creation/removal/user provisioning)</p>
+                <p>- Supported Sales team with environment cloning and provisioning</p>
+                <p>- Shadowed Automation Team, DB Administrators, Performance Team and Network Operations Center</p>
+            </div>
+            <div class='supporter'>
+                <img src="~images/shr_logo.jpg" />
+                <h2>SocialHighRise</h2>
+                <h3>Software Developer Intern | v2 | August 2016 - May 2017</h3>
+                <p>- Developed in-house account management tool to aggregate social media client data</p>
+                <p>- Handled development and maintenance of company website</p>
+            </div>
+            <div class='supporter'>
+                <img src="~images/llnl_logo.jpg" />
+                <h2>Lawrence Livermore National Laboratory</h2>
+                <h3>Computation Intern | v1 | January 2016 - August 2016</h3>
+                <p>- Developed User Interface in PyQt for the labs large scale climate data processing library</p>
+                <p>- Rebuilt the User Interface in React/Redux (JavaScript provided significantly faster graphics)</p>
             </div>
         </div>
-        <div v-if='confused' id='version-explanation'>
-            <p>Verison are just a fun way to indicate what I learned and when. For example v0.1 is starting college where we were taught C and C++ while v1 was my first internship (Lawrence Livermore) where I learned most of my python knowledge. v2
-                indicates my second job (SocialHighRise) and v3 inidcates my 3rd (Workday). v4 indicates what version I am currently.
-            </p>
+        <div id='confused'>
+            <div id='version-question'>
+                <div>
+                    <h3>Confused by the versions?</h3>
+                    <a @click='(confused ? confused = false : confused = true)'><icon name='question-circle' scale='2'/></a>
+                </div>
+            </div>
+            <div v-if='confused' id='version-explanation'>
+                <p>Verison are just a fun way to indicate what I learned and when. For example v0.1 is starting college where we were taught C and C++ while v1 was my first internship (Lawrence Livermore) where I learned most of my python knowledge. v2
+                    indicates my second job (SocialHighRise) and v3 inidcates my 3rd (Workday). v4 indicates what version I am currently.
+                </p>
+            </div>
         </div>
     </div>
 </div>
@@ -58,12 +60,17 @@ export default {
         }
     }
 }
-</script> <style lang="scss" scoped>
+</script> 
+
+<style lang="scss" scoped>
+.container{
+    background: $secondary;
+}
 #supporters{
     min-height: 100vh;
     background: $secondary;
     display:grid;
-    grid-template-rows: 30% 40% 30%;
+    // grid-template-rows: 20% 1fr 20%;
     align-items:center;
     @media (max-width: $phone){
         height: auto;
@@ -79,7 +86,7 @@ export default {
 
 .supporter{
     margin: 10px;
-    width:700px;
+    width:500px;
     & h3{
         color: $primary;
     }
@@ -120,9 +127,8 @@ export default {
 
 #version-explanation{
     flex:1;
-    width: 50%;
-    margin-left:25%;
     overflow: hidden;
+    margin:0 40px;
     @media (max-width: $phone){
         width: 100%;
         margin: 0;

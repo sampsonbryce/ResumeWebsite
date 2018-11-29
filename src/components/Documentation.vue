@@ -1,97 +1,100 @@
 <template>
-<div id='documentation'>
-    <div>
-        <h1 class='large'>DOCUMENTATION</h1>
-    </div>
-    <div id='getting-started'>
-        <h3>Getting Started</h3>
-        <p>If you are interested in adding Bryce to your stack then just use this command and it will handle everything for you!</p>
-        <span class='code'>$> ./contact-bryce.sh --priority=high</span>
-        <a id='go-button' class="button" @click='$scrollTo("#contact", 1000)'>Try It!</a>
-    </div>
-    <div id='examples'>
-        <h3>Examples</h3>
-        <div id='example-container'>
-            <div class='example-item'>
-                <h2>HeroHome</h2>
-                <p>Charitable Chrome Extension and Home Page</p>
-                <a class='example-more-button button with-icon' @click="changeExample(1)">
-                    <span v-if="example == 1"><icon name="chevron-up" /></span>
-                    <span v-else><icon name="chevron-down" /></span>
-                </a>
 
-                <!-- Duplicate selected item for mobile -->
-                <div v-if="example == 1" class="selected-example-item mobile">
-                    <a class='button with-icon white' href="https://home.heroinc.io" target="_blank"><icon name="external-link" /></a>
-                    <p>A very recent example of software built with v4.0, HeroHome is a webpage and Chrome extension intended to be used as a replacement for your New Tab. The page will display ads while you open new tabs and search, all proceeds of which 
-                        will be directed to charity. This particular implementation uses Node.js and Express as well as the new Vue.js features implemented in v4.0!
-                    </p>
-                </div>
-            </div>
-            <div class='example-item '>
-                <h2>DayInTheLife Blog</h2>
-                <p>Personal blog with article management tools</p>
-                <a class='example-more-button button with-icon' @click="changeExample(2)">
-                    <span v-if="example == 2"><icon name="chevron-up" /></span>
-                    <span v-else><icon name="chevron-down" /></span>
-                </a>
-                <!-- Duplicate selected item for mobile -->
-
-                <div v-if="example == 2" class="selected-example-item mobile">
-                    <a class='button with-icon white' href="https://github.com/sampsonbryce/DayInTheLife" target="_blank"><icon name="github" /></a>
-                    <p>Another more recent expedition into the v4.0 Vue.js feature, DayInTheLife was intended as a blog for the Bryce project. It was built using Node.js and Vue.js, resulting in the features now included in v4.0. Unfortunately the site 
-                        had very little popularity and was taken down for cost reasons.
-                    </p>
-                </div>
-            </div>
-            <div class='example-item'>
-                <h2>DataSift Visualization</h2>
-                <p>Visualization of national sentiment towards selected topics</p>
-                <a class='example-more-button button with-icon' @click="changeExample(3)">
-                    <span v-if="example == 3"><icon name="chevron-up" /></span>
-                    <span v-else><icon name="chevron-down" /></span>
-                </a>
-                <!-- Duplicate selected item for mobile -->
-
-                <div v-if="example == 3" class="selected-example-item mobile">
-                    <a class='button with-icon white' href="https://github.com/sampsonbryce/datasift-visualization" target="_blank"><icon name="github" /></a>
-                    <p> Another JavaScript project, DataSift was intended as a prototype for an idea that relied on the DataSift API. It was rather simple but used D3 for the visualization which was new ground for the Bryce build tool.  
-                    </p>
-                </div>
-            </div>
+<div class='container'>
+    <div id='documentation' class='section'>
+        <div>
+            <h1 class='large'>DOCUMENTATION</h1>
         </div>
+        <div id='getting-started'>
+            <h3>Getting Started</h3>
+            <p>If you are interested in adding Bryce to your stack then just use this command and it will handle everything for you!</p>
+            <span class='code'>$> ./contact-bryce.sh --priority=high</span>
+            <a id='go-button' class="button" @click='$scrollTo("#contact", 1000)'>Try It!</a>
+        </div>
+        <div id='examples'>
+            <h3>Examples</h3>
+            <div id='example-container'>
+                <div class='example-item'>
+                    <h2>HeroHome</h2>
+                    <p>Charitable Chrome Extension and Home Page</p>
+                    <a class='example-more-button button with-icon' @click="changeExample(1)">
+                        <span v-if="example == 1"><icon name="chevron-up" /></span>
+                        <span v-else><icon name="chevron-down" /></span>
+                    </a>
 
-        <!-- Desktop selected items -->
-            <div id='selected-example' class='desktop'>
-                <transition name="uncover">
-                    <div v-if="example == 1" class="selected-example-item ">
+                    <!-- Duplicate selected item for mobile -->
+                    <div v-if="example == 1" class="selected-example-item mobile">
                         <a class='button with-icon white' href="https://home.heroinc.io" target="_blank"><icon name="external-link" /></a>
                         <p>A very recent example of software built with v4.0, HeroHome is a webpage and Chrome extension intended to be used as a replacement for your New Tab. The page will display ads while you open new tabs and search, all proceeds of which 
                             will be directed to charity. This particular implementation uses Node.js and Express as well as the new Vue.js features implemented in v4.0!
                         </p>
                     </div>
-        </transition>
-
-                <transition name="uncover">
-                <div v-if="example == 2" class="selected-example-item">
-                    <a class='button with-icon white' href="https://github.com/sampsonbryce/DayInTheLife" target="_blank"><icon name="github" /></a>
-                    <p>Another more recent expedition into the v4.0 Vue.js feature, DayInTheLife was intended as a blog for the Bryce project. It was built using Node.js and Vue.js, resulting in the features now included in v4.0. Unfortunately the site 
-                        had very little popularity and was taken down for cost reasons.
-                    </p>
                 </div>
-        </transition>
+                <div class='example-item '>
+                    <h2>DayInTheLife Blog</h2>
+                    <p>Personal blog with article management tools</p>
+                    <a class='example-more-button button with-icon' @click="changeExample(2)">
+                        <span v-if="example == 2"><icon name="chevron-up" /></span>
+                        <span v-else><icon name="chevron-down" /></span>
+                    </a>
+                    <!-- Duplicate selected item for mobile -->
 
-                <transition name="uncover">
-                <div v-if="example == 3" class="selected-example-item">
-                    <a class='button with-icon white' href="https://github.com/sampsonbryce/datasift-visualization" target="_blank"><icon name="github" /></a>
-                    <p> Another JavaScript project, DataSift was intended as a prototype for an idea that relied on the DataSift API. It was rather simple but used D3 for the visualization which was new ground for the Bryce build tool.  
-                    </p>
+                    <div v-if="example == 2" class="selected-example-item mobile">
+                        <a class='button with-icon white' href="https://github.com/sampsonbryce/DayInTheLife" target="_blank"><icon name="github" /></a>
+                        <p>Another more recent expedition into the v4.0 Vue.js feature, DayInTheLife was intended as a blog for the Bryce project. It was built using Node.js and Vue.js, resulting in the features now included in v4.0. Unfortunately the site 
+                            had very little popularity and was taken down for cost reasons.
+                        </p>
+                    </div>
                 </div>
-        </transition>
+                <div class='example-item'>
+                    <h2>DataSift Visualization</h2>
+                    <p>Visualization of national sentiment towards selected topics</p>
+                    <a class='example-more-button button with-icon' @click="changeExample(3)">
+                        <span v-if="example == 3"><icon name="chevron-up" /></span>
+                        <span v-else><icon name="chevron-down" /></span>
+                    </a>
+                    <!-- Duplicate selected item for mobile -->
+
+                    <div v-if="example == 3" class="selected-example-item mobile">
+                        <a class='button with-icon white' href="https://github.com/sampsonbryce/datasift-visualization" target="_blank"><icon name="github" /></a>
+                        <p> Another JavaScript project, DataSift was intended as a prototype for an idea that relied on the DataSift API. It was rather simple but used D3 for the visualization which was new ground for the Bryce build tool.  
+                        </p>
+                    </div>
+                </div>
             </div>
 
-        <div id='more-examples'>
-            <h3>Find more examples and usable code here <a class='button with-icon white' href="https://github.com/sampsonbryce" target="_blank"><icon name="github" /></a></h3>
+            <!-- Desktop selected items -->
+                <div id='selected-example' class='desktop'>
+                    <transition name="uncover">
+                        <div v-if="example == 1" class="selected-example-item ">
+                            <a class='button with-icon white' href="https://home.heroinc.io" target="_blank"><icon name="external-link" /></a>
+                            <p>A very recent example of software built with v4.0, HeroHome is a webpage and Chrome extension intended to be used as a replacement for your New Tab. The page will display ads while you open new tabs and search, all proceeds of which 
+                                will be directed to charity. This particular implementation uses Node.js and Express as well as the new Vue.js features implemented in v4.0!
+                            </p>
+                        </div>
+            </transition>
+
+                    <transition name="uncover">
+                    <div v-if="example == 2" class="selected-example-item">
+                        <a class='button with-icon white' href="https://github.com/sampsonbryce/DayInTheLife" target="_blank"><icon name="github" /></a>
+                        <p>Another more recent expedition into the v4.0 Vue.js feature, DayInTheLife was intended as a blog for the Bryce project. It was built using Node.js and Vue.js, resulting in the features now included in v4.0. Unfortunately the site 
+                            had very little popularity and was taken down for cost reasons.
+                        </p>
+                    </div>
+            </transition>
+
+                    <transition name="uncover">
+                    <div v-if="example == 3" class="selected-example-item">
+                        <a class='button with-icon white' href="https://github.com/sampsonbryce/datasift-visualization" target="_blank"><icon name="github" /></a>
+                        <p> Another JavaScript project, DataSift was intended as a prototype for an idea that relied on the DataSift API. It was rather simple but used D3 for the visualization which was new ground for the Bryce build tool.  
+                        </p>
+                    </div>
+            </transition>
+                </div>
+
+            <div id='more-examples'>
+                <h3>Find more examples and usable code here <a class='button with-icon white' href="https://github.com/sampsonbryce" target="_blank"><icon name="github" /></a></h3>
+            </div>
         </div>
     </div>
 </div>
@@ -146,12 +149,16 @@ export default {
     opacity: 1;
 }
 
+.container{
+    background:white;
+}
+
 #documentation{
     color:black;
     min-height:100vh;
     display:grid;
     align-items:center;
-    grid-template-rows: 30% 70%;
+    // grid-template-rows: 30% 70%;
     @media (max-width: $phone){
         height: auto;
     }

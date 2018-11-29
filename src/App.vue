@@ -49,6 +49,8 @@ html,body{
   text-align: center;
   color: white;
   margin: 0;
+  display:grid;
+  justify-items: center;
 }
 
 h1 {

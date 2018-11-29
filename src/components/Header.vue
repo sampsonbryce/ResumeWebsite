@@ -36,8 +36,9 @@ export default {
 
 <style lang="scss">
 #header {
-    min-height: 100vh;
+    width:100%;
     background: $secondary;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 200px auto 200px;
     grid-template-rows: 100%;
@@ -51,7 +52,6 @@ export default {
             right: 0;
         }
     }
-    padding:10px;
 }
 
 #info-container {
@@ -104,15 +104,16 @@ export default {
 .nav-link{
     flex:1;
     text-align:right;
+    background:white;
+    color:$secondary;
     margin-left:50px;
     padding: 10px 10px 10px 0;
-    border: 1px solid white;
     border-right: none;
-    transition: margin-left .7s ease 0s;
+    transition: all .4s ease 0s;
     cursor: pointer;
     &:hover{
         margin-left: 0;
-        color: $primary;
+        background: $primary;
     }
 
     @media (max-width: $phone){

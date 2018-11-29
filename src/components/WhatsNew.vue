@@ -1,46 +1,120 @@
 <template>
-<div id='whatsnew'>
-    <div>
-        <h1 class='large'>WHAT'S NEW?</h1>
-        <h3>In v4.0</h3>
-    </div>
-    <div id='item-container'>
-        <div class="new-item">
-            <img src="~images/python.png" />
-        <p>Building on eleven months of on the job python experience and numerous occasions where quick scripting was effectively applied, v4.0 includes new and improved python language skills for speedy development. 
-        You might wonder "Why Python?". The simple answer is it gets the job done in the shortest amount of time possible!</p>
+<div class='container'>
+    <div id='whatsnew' class='section'>
+        <!-- <div>
+            <h1 class='large'>WHAT'S NEW?</h1>
+            <h3>In v4.0</h3>
         </div>
-        <div class="new-item">
-            <img src="~images/javascript.png" />
-            <p>JavaScript has been the main focus of v4.0 since the beginning with a major emphasis on Node.js and Vue.js. In fact, this website was built with Vue.js features now included with v4.0! v1.0 came stock with React.js support which
-                allowed those utilizing v1.0 to drastically improve performance due to the native speed of JavaScript versus previous attempts at using python. v2.0 resulted in a drastic addition of jQuery capabilites for those not so bleeding edge
-                projects that still like to do it old school style. Now with Vue.js and continued support for Node.js, anything is possible!
-            </p>
-        </div>
-        <div class="new-item">
-            <img src="~images/cc++.png" />
-            <p>Althought not necessarily new, C and C++ have been a core principal since v0.1, we wanted to solidify our commitment to C and C++. Although it is has been sitting on the sidelines in favor of Python and JavaScript as of late, 
-                C and C++ remain a vital part of v4.0!</p>
-        </div>
+        <div id='item-container'>
+            <div class="new-item">
+                <img src="~images/python.png" />
+            <p>Building on eleven months of on the job python experience and numerous occasions where quick scripting was effectively applied, v4.0 includes new and improved python language skills for speedy development. 
+            You might wonder "Why Python?". The simple answer is it gets the job done in the shortest amount of time possible!</p>
+            </div>
+            <div class="new-item">
+                <img src="~images/javascript.png" />
+                <p>JavaScript has been the main focus of v4.0 since the beginning with a major emphasis on Node.js and Vue.js. In fact, this website was built with Vue.js features now included with v4.0! v1.0 came stock with React.js support which
+                    allowed those utilizing v1.0 to drastically improve performance due to the native speed of JavaScript versus previous attempts at using python. v2.0 resulted in a drastic addition of jQuery capabilites for those not so bleeding edge
+                    projects that still like to do it old school style. Now with Vue.js and continued support for Node.js, anything is possible!
+                </p>
+            </div>
+            <div class="new-item">
+                <img src="~images/cc++.png" />
+                <p>Althought not necessarily new, C and C++ have been a core principal since v0.1, we wanted to solidify our commitment to C and C++. Although it is has been sitting on the sidelines in favor of Python and JavaScript as of late, 
+                    C and C++ remain a vital part of v4.0!</p>
+            </div>
+        </div> -->
+        <IEcharts
+            class='chart'
+            :option="bar"
+        />
+
     </div>
 </div>
 </template>
 
 <script>
+import IEcharts from 'vue-echarts-v3/src/lite.js';
+import 'echarts/lib/chart/bar';
+import 'echarts/lib/component/title';
+
+const labelStyle = {
+    fontSize: 20,
+    fontWeight:200,
+}
+
 export default {
     name: "whatsnew-component",
+    components:{
+        IEcharts
+    },
     data(){
         return {
-
+            bar: {
+                color: ["white"],
+                title: {
+                    text: "Technology Proficiency",
+                    left:'center',
+                    textStyle:{
+                        fontWeight:200,
+                        fontSize: 40,
+                    }
+                },
+                grid:{
+                    containLabel: true,
+                },
+                tooltip: {},
+                yAxis: {
+                    type: "category",
+                    data: ["Java", "C#", "C++", "Vue.js", "React Native", "JavaScript", "Python"],
+                    axisLabel: {
+                        ...labelStyle,
+                        fontWeight:500,
+                    }
+                },
+                xAxis: {
+                    axisLabel: {
+                        formatter: (value) => {
+                            if(value === 0){
+                                return "O(n!)";
+                            }
+                            if(value === 20){
+                                return "O(n^2)";
+                            }
+                            if(value === 40){
+                                return "O(nlog(n))";
+                            }
+                            if(value === 60){
+                                return "O(n)";
+                            }
+                            if(value === 80){
+                                return "O(log(n))";
+                            }
+                            if(value === 100){
+                                return "O(1)";
+                            }
+                        },
+                        ...labelStyle,
+                    }
+                },
+                series: [{
+                    name: "Languages",
+                    type: "bar",
+                    data: [40, 40, 55, 60, 80, 90, 90]
+                }]
+            }
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
+.container{
+    background:$primary;
+}
 #whatsnew{
-    background: $primary;
     color: black;
+    width:100%;
     min-height:100vh;
     & h1{
         display: inline-block;
@@ -64,7 +138,6 @@ export default {
 
 .new-item{
     max-width:400px;
-    // min-height: 400px;
     margin: 10px;
     padding:10px;
     background: $secondary;
