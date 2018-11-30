@@ -900,11 +900,6 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-batch-processor@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/batch-processor/-/batch-processor-1.0.0.tgz#75c95c32b748e0850d10c2b168f6bdbe9891ace8"
-  integrity sha1-dclcMrdI4IUNEMKxaPa9vpiRrOg=
-
 batch@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
@@ -2313,6 +2308,13 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
 
+echarts@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/echarts/-/echarts-4.1.0.tgz#d588c95f73c1a9928b9c73d5b769751c3185bcdc"
+  integrity sha512-gP1e1fNnAj9KJpTDLXV21brklbfJlqeINmpQDJCDta9TX3cPoqyQOiDVcEPzbOVHqgBRgTOwNxC5iGwJ89014A==
+  dependencies:
+    zrender "4.0.4"
+
 echarts@^4.2.0-rc.2:
   version "4.2.0-rc.2"
   resolved "https://registry.yarnpkg.com/echarts/-/echarts-4.2.0-rc.2.tgz#6a98397aafa81b65cbf0bc15d9afdbfb244df91e"
@@ -2329,13 +2331,6 @@ electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.47:
   version "1.3.79"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.79.tgz#774718f06284a4bf8f578ac67e74508fe659f13a"
   integrity sha512-LQdY3j4PxuUl6xfxiFruTSlCniTrTrzAd8/HfsLEMi0PUpaQ0Iy+Pr4N4VllDYjs0Hyu2lkTbvzqlG+PX9NsNw==
-
-element-resize-detector@latest:
-  version "1.1.14"
-  resolved "https://registry.yarnpkg.com/element-resize-detector/-/element-resize-detector-1.1.14.tgz#af064a0a618a820ad570a95c5eec5b77be0128c1"
-  integrity sha1-rwZKCmGKggrVcKlcXuxbd74BKME=
-  dependencies:
-    batch-processor "^1.0.0"
 
 elliptic@^6.0.0:
   version "6.4.1"
@@ -5739,6 +5734,11 @@ requires-port@^1.0.0:
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
 
+resize-detector@^0.1.7:
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/resize-detector/-/resize-detector-0.1.9.tgz#69c4222e9c0d3740c995522b4a1cf2656a6526aa"
+  integrity sha512-dZ70I6+XErJ+bQAqc4e/AoAYaKKfdRS4/OLlYykTnaY753E97thIEbZLtJMXm8Uc5qG0lnC7DLfedd52PZpSwg==
+
 resolve-cwd@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/resolve-cwd/-/resolve-cwd-2.0.0.tgz#00a9f7387556e27038eae232caa372a6a59b665a"
@@ -6761,13 +6761,14 @@ vue-awesome@^2.3.4:
   resolved "https://registry.yarnpkg.com/vue-awesome/-/vue-awesome-2.3.8.tgz#95ed4fb7f84453603f0931f865238576e55582a4"
   integrity sha512-X7ttcOJerhqA6iK/UK8/DbFiBrEAFY1abGVWBqGx0kGLwPU1CjG73YfBffvIs14GiqmlNZDR5gGVsiTEc+GLhg==
 
-vue-echarts-v3@^1.0.19:
-  version "1.0.19"
-  resolved "https://registry.yarnpkg.com/vue-echarts-v3/-/vue-echarts-v3-1.0.19.tgz#6814e7e426aafed80edfa5df321db51c00789802"
-  integrity sha512-BjHsJ069q/B+Py7ZwPhGpQKak8nCJR1eYCZFI3hG9aeifGxcW9pWnaSbFjhh4TF1UtKKGF33x+v9xdR1fyLh9A==
+vue-echarts@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/vue-echarts/-/vue-echarts-3.1.3.tgz#a65de7fe31e2d18bf38928ccde83e144667ea9e6"
+  integrity sha512-qAGWNnTQ8rXN/Q4/krfcOpHmmlRfAXaT8penBiG6+USnYQo8W3Misjw2RezSfjCGrDcDkrylScpufNu8dwRFRA==
   dependencies:
-    element-resize-detector latest
-    lodash latest
+    echarts "^4.1.0"
+    lodash "^4.17.10"
+    resize-detector "^0.1.7"
 
 vue-hot-reload-api@^2.2.0:
   version "2.3.1"
@@ -7126,6 +7127,11 @@ yargs@~3.10.0:
     cliui "^2.1.0"
     decamelize "^1.0.0"
     window-size "0.1.0"
+
+zrender@4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/zrender/-/zrender-4.0.4.tgz#910e60d888f00c9599073f23758dd23345fe48fd"
+  integrity sha512-03Vd/BDl/cPXp8E61f5+Xbgr/a4vDyFA+uUtUc1s+5KgcPbyY2m+78R/9LQwkR6QwFYHG8qk25Q8ESGs/qpkZw==
 
 zrender@4.0.5:
   version "4.0.5"

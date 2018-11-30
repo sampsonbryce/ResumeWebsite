@@ -2,6 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const resolve = path.resolve;
 
 if(process.env.NODE_ENV == 'production'){
 	out_path = '/data/brycethebuilder'
@@ -86,7 +87,12 @@ module.exports = {
         options: {
           presets: ['env']
         },
-        include: [resolve('src'), resolve('test'), resolve('node_modules/vue-echarts-v3/src')],
+        include: [
+          resolve('src'),
+          resolve('test'),
+          resolve('node_modules/vue-echarts'),
+          resolve('node_modules/resize-detector')
+        ],
         exclude: /node_modules/
       },
       {

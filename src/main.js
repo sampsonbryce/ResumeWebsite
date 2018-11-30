@@ -5,12 +5,15 @@ import Icon from 'vue-awesome/components/Icon';
 import VueScrollTo from 'vue-scrollto';
 import Toast from './plugins/Toast';
 import VueObserveVisibility from 'vue-observe-visibility'
+import ECharts from 'vue-echarts/components/ECharts'
+import 'echarts/lib/chart/bar'
 
 Vue.use(VueObserveVisibility)
 Vue.use(Toast);
 Vue.use(VueScrollTo);
 
-Vue.component('icon', Icon)
+Vue.component('icon', Icon);
+Vue.component('v-chart', ECharts);
 
 new Vue({
   el: '#app',

@@ -24,9 +24,9 @@
                     C and C++ remain a vital part of v4.0!</p>
             </div>
         </div> -->
-        <IEcharts
+        <v-chart
             class='chart'
-            :option="bar"
+            :options="bar"
         />
 
     </div>
@@ -34,19 +34,25 @@
 </template>
 
 <script>
-import IEcharts from 'vue-echarts-v3/src/lite.js';
-import 'echarts/lib/chart/bar';
-import 'echarts/lib/component/title';
+import ECharts from 'vue-echarts';
 
 const labelStyle = {
     fontSize: 20,
     fontWeight:200,
 }
 
+const tooltipSettings = {
+    textStyle: {
+        fontSize: "20",
+        width:20
+    },
+    extraCssText: 'width:400px;white-space:normal;',
+}
+
 export default {
     name: "whatsnew-component",
     components:{
-        IEcharts
+        'v-chart': ECharts
     },
     data(){
         return {
@@ -60,10 +66,15 @@ export default {
                         fontSize: 40,
                     }
                 },
+                tooltip:{
+                    trigger: 'item',
+                    axisPointer: {
+                        type: 'shadow',
+                    },
+                },
                 grid:{
                     containLabel: true,
                 },
-                tooltip: {},
                 yAxis: {
                     type: "category",
                     data: ["Java", "C#", "C++", "Vue.js", "React Native", "JavaScript", "Python"],
@@ -73,6 +84,7 @@ export default {
                     }
                 },
                 xAxis: {
+                    type: "value",
                     axisLabel: {
                         formatter: (value) => {
                             if(value === 0){
@@ -95,12 +107,50 @@ export default {
                             }
                         },
                         ...labelStyle,
-                    }
+                    },
                 },
                 series: [{
                     name: "Languages",
                     type: "bar",
-                    data: [40, 40, 55, 60, 80, 90, 90]
+                    barWidth: "60%",
+                    data: [
+                        {value: 40, tooltip: {
+                            ...tooltipSettings,
+                            formatter: () => {
+                                return "From Android development to class projects, I just can't seem to escape it!";
+                            }}},
+                        {value: 40, tooltip: {
+                            ...tooltipSettings,
+                            formatter: () => {
+                                return "Mostly gained from the ASP.Net project at SocialHighRise";
+                            }}},
+                        {value: 55, tooltip: {
+                            ...tooltipSettings,
+                            formatter: () => {
+                                return "The core language taught at Chico State. From if statements to algorithms, its all been C++";
+                            }}},
+                        {value: 60, tooltip: {
+                            ...tooltipSettings,
+                            formatter: () => {
+                                return "One of my favorite frameworks. This website is written in it!";
+                            }}},
+                        {value: 80, tooltip: {
+                            ...tooltipSettings,
+                            formatter: () => {
+                                return "My preferred mobile development choice";
+                            }}},
+                        {value: 90, tooltip: {
+                            ...tooltipSettings,
+                            formatter: () => {
+                                return "Most of my coding outside of class has been JavaScript and its associated frameworks for web and mobile. I'm familiar with ES6/ES7 syntax as well.";
+                            }}},
+                        {value: 90, tooltip: {
+                            ...tooltipSettings,
+                            formatter: () => {
+                                return "My go to language for anything and everything. From the quick and dirty script to algorithm practice and anything in between."
+                            }}
+                        }
+                        ]
                 }]
             }
         }
@@ -155,6 +205,10 @@ export default {
         width: auto;
         margin:10px 0;
     }
-    
+}
+
+.chart {
+    width:100%;
+    height:100%;
 }
 </style>
