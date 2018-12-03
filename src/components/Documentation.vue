@@ -164,8 +164,16 @@ export default {
     }
     padding:10px;
 }
+#getting-started{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .code{
+    display:inline-block;
+    width:350px;
+    margin-bottom:10px;
     background:rgb(223, 223, 223);
     border-radius: 2px;
     padding:4px 20px 4px 20px;
@@ -173,10 +181,10 @@ export default {
 
 #go-button{
     padding: 10px;
+    width:350px;
 
     @media (max-width: $phone){
         margin: 10px;
-        // width:90%;
         display:block;
     }
 }
@@ -198,33 +206,6 @@ export default {
     }
 }
 
-.button{
-    display:inline-block;
-    border-radius:1px;
-    color:black;
-    background:$primary;
-    cursor: pointer;
-    transition: background .3s ease, color .3s ease;
-
-    &.with-icon{
-        padding:10px 10px 5px 10px;
-    }
-
-    &:hover{
-        background: $secondary;
-        color:white;
-    }
-    &.white{
-        background: $secondary;
-        color:white;
-        border: 1px solid $secondary;
-        &:hover{
-            background: white;
-            color:$secondary;
-        }
-    }
-}
-
 #selected-example{
     margin-top: 20px;
     flex:1;
@@ -235,7 +216,7 @@ export default {
     display:grid;
     justify-items: center;
     overflow:hidden;
-    padding: 10px 0 10px 0;
+    padding:10px 0;
     height:auto;
 
     & p{
@@ -254,6 +235,9 @@ export default {
 
 #more-examples{
     flex:1;
+    & .button{
+        display:inline-block;
+    }
 }
 
 .mobile{

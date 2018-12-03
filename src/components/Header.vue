@@ -5,8 +5,12 @@
             <p>The New v4.0</p>
             <p>The ultimate build tool! Why? Because it builds stuff. 'Nuff said!</p>
         </div>
-        <a @click="(showNav ? showNav = false : showNav = true)" id='nav-toggle' v-bind:class='{ extendtoggle: showNav }'><icon name='bars' /></a>
-        <div id='navigation-container' v-bind:class='{ showsidebar : showNav }'>
+        <div id="mobile-nav-bar" :class="{showname: showName}">
+            <h2 id="name">Bryce Sampson</h2>
+            <a @click='$scrollTo("#contact", 1000)' class="button">Contact</a>
+            <a @click="(showNav ? showNav = false : showNav = true)" id='nav-toggle'><icon name='bars' /></a>
+        </div>
+        <div id='navigation-container' :class='{ showsidebar : showNav }'>
             <ul>
                 <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#qualifications')">Qualifications</a></li>
                 <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#whatsnew')">What's New?</a></li>
@@ -23,14 +27,36 @@ export default {
     name: 'header-component',
     data(){
         return {
-            showNav: false
+            showNav: false,
+            showName: false
         }
     },
     methods: {
         scrollTo: function scrollTo(element){
-            this.$scrollTo(element, 1000, { easing: 'ease' });
+            let offset = 0;
+            // set mobile offset for header bar on mobile
+            if(window.innerWidth <= 768){
+                offset = -60
+            }
+
+            this.$scrollTo(element, 1000, { easing: 'ease', offset });
+        },
+        handleScroll(){
+            let scrollHeight = window.scrollY;
+            // console.log(scrollHeight);
+            if(scrollHeight > 300){
+                this.showName = true;
+            }else{
+                this.showName = false;
+            }
         }
     },
+    created () {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed () {
+        window.removeEventListener('scroll', this.handleScroll);
+    } 
 }
 </script>
 
@@ -50,6 +76,8 @@ export default {
     & .showsidebar{
         @media (max-width: $phone){
             right: 0;
+            height:100%;
+            border-left:1px solid white;
         }
     }
 }
@@ -60,16 +88,60 @@ export default {
     align-self: center;
 }
 
+#mobile-nav-bar{
+    display:none;
+    position: fixed;
+    align-items:center;
+    // grid-template-rows: 60px;
+    // grid-template-columns: 300px 1fr 60px;
+    z-index:1;
+    width: 100%;
+    height:60px;
+    background-color:$secondary;
+    border-bottom:1px solid white;
+    transition: all .3s ease;    
+
+    &.showname{
+        & #name{
+            width:300px;
+        }
+    }
+
+    & #name{
+        width:0;
+        overflow:hidden;
+        font-weight:300;
+        white-space:nowrap;
+        transition: all .3s ease;    
+    }
+
+    & .button{
+        flex:1;
+        height:100%;
+        color:white;
+        // margin:0 10px;
+        transition: all .3s ease;    
+    }
+
+    @media(max-width: $phone){
+        display: flex;
+    }
+}
+
 #nav-toggle{
     display:none;
-    position:fixed;
-    top: 0px;
-    right: 0px;
-    background: $secondary;
-    padding: 10px;
     transition: right .5 ease;
+    border-left:1px solid white;
+    height: 100%;
+    width: 60px;
+    align-items: center;
+    justify-content: center;
+    &:active{
+        background-color:white;
+        color:black;
+    }
     @media (max-width: $phone){
-        display:block;
+        display: flex;
     }
 }
 
@@ -81,10 +153,10 @@ export default {
         & > ul {
             margin-left: 1em;
         }
-        height:auto;
+        height:100%;
         background:$secondary;
         position:fixed;
-        top:40px;
+        top:60px;
         right: -200px;
         z-index: 1;
         width: 170px;

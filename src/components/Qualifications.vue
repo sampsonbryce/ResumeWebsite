@@ -106,6 +106,8 @@ export default {
     
     @media (max-width: $phone){
         height: auto;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr;
     }
     padding:10px;
 }

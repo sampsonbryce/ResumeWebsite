@@ -3,7 +3,7 @@
     <div>
         <h1 class='large'>WANT TO KNOW MORE?</h1>
     </div>
-    <div>
+    <div id='button-container'>
         <a class='button' @click='copyEmail'>
             <icon name='envelope' scale='1.5'/>
             <span class='text' id='email'>sampson.bryce@yahoo.com</span>
@@ -57,23 +57,24 @@ export default {
     padding:10px;
 }
 
+#button-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    align-items:center;
+    @media(max-width: $phone){
+        flex-direction:column;
+    }
+}
+
 .button {
-    cursor: pointer;
+    display:flex;
+    justify-content:space-between;
     width: 300px;
-    margin-top: 5px;
-    display: inline-block;
-    padding: 15px;
+    margin: 5px;
     border: 1px solid $secondary;
     background: $secondary;
-    color: white;
-    transition: all .5s ease;
-    & span{
-        display: inline-block;
-    }
-    & .text{
-        vertical-align: top;
-        margin-top:3px;
-    }
+    color:white; 
     &:hover{
         background: $primary;
         color:$secondary;

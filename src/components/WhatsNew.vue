@@ -1,6 +1,6 @@
 <template>
 <div class='container'>
-    <div id='whatsnew' class='section'>
+    <div id='whatsnew' class='section' v-observe-visibility="showChart">
         <!-- <div>
             <h1 class='large'>WHAT'S NEW?</h1>
             <h3>In v4.0</h3>
@@ -24,7 +24,7 @@
                     C and C++ remain a vital part of v4.0!</p>
             </div>
         </div> -->
-        <v-chart
+        <v-chart 
             class='chart'
             :options="bar"
         />
@@ -36,17 +36,28 @@
 <script>
 import ECharts from 'vue-echarts';
 
-const labelStyle = {
+let languageLabelStyle = {
     fontSize: 20,
     fontWeight:200,
 }
 
-const tooltipSettings = {
+let bigoLabelStyle = {
+    fontSize: 20,
+    rotate: -45,
+    fontWeight:200,
+}
+
+let tooltipSettings = {
     textStyle: {
-        fontSize: "20",
+        fontSize: 20,
         width:20
     },
     extraCssText: 'width:400px;white-space:normal;',
+}
+
+let titleTextStyle = {
+    fontWeight:200,
+    fontSize: 40,
 }
 
 export default {
@@ -56,15 +67,24 @@ export default {
     },
     data(){
         return {
-            bar: {
+            bar: null,
+            series: null,
+        }
+    },
+    methods:{
+        showChart(isVisible, entry){
+            if(isVisible){
+                this.bar.series = this.series;
+            }
+        },
+        generateBar(){
+            // console.log('labelStyle: ', labelStyle);
+            this.bar = {
                 color: ["white"],
                 title: {
-                    text: "Technology Proficiency",
+                    text: "Lanugage Support",
                     left:'center',
-                    textStyle:{
-                        fontWeight:200,
-                        fontSize: 40,
-                    }
+                    textStyle: titleTextStyle, 
                 },
                 tooltip:{
                     trigger: 'item',
@@ -79,7 +99,7 @@ export default {
                     type: "category",
                     data: ["Java", "C#", "C++", "Vue.js", "React Native", "JavaScript", "Python"],
                     axisLabel: {
-                        ...labelStyle,
+                        ...languageLabelStyle,
                         fontWeight:500,
                     }
                 },
@@ -106,10 +126,13 @@ export default {
                                 return "O(1)";
                             }
                         },
-                        ...labelStyle,
+                        ...bigoLabelStyle,
                     },
                 },
-                series: [{
+                series: []
+            },
+
+            this.series = [{
                     name: "Languages",
                     type: "bar",
                     barWidth: "60%",
@@ -152,8 +175,18 @@ export default {
                         }
                         ]
                 }]
-            }
         }
+        
+    },
+    created(){
+        // set graph styles on mobile
+        if(window.innerWidth <= 768){
+            bigoLabelStyle.fontSize = 15;
+            languageLabelStyle.fontSize = 15;
+            titleTextStyle.fontSize = 20;
+        }
+
+        this.generateBar();
     }
 }
 </script>

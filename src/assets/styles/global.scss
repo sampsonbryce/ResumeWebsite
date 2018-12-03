@@ -15,5 +15,34 @@ $section_width: 1200px;
 }
 .section{
     max-width: $section_width;
-    
+}
+
+.button{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:1px;
+    color:black;
+    background:$primary;
+    cursor: pointer;
+    transition: background .3s ease, color .3s ease;
+    padding: 10px;
+
+    &.with-icon{
+        padding:10px 10px 5px 10px;
+    }
+
+    &:hover{
+        background: $secondary;
+        color:white;
+    }
+    &.white{
+        background: $secondary;
+        color:white;
+        border: 1px solid $secondary;
+        &:hover{
+            background: white;
+            color:$secondary;
+        }
+    }
 }
