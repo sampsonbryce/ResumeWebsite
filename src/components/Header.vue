@@ -6,7 +6,7 @@
             <p>The ultimate build tool! Why? Because it builds stuff. 'Nuff said!</p>
         </div>
         <div id="mobile-nav-bar" :class="{showname: showName}">
-            <h2 id="name">Bryce Sampson</h2>
+            <h2 id="name" @click='$scrollTo("#header")'>Bryce The Builder</h2>
             <a @click='$scrollTo("#contact", 1000)' class="button">Contact</a>
             <a @click="(showNav ? showNav = false : showNav = true)" id='nav-toggle'><icon name='bars' /></a>
         </div>
@@ -33,12 +33,7 @@ export default {
     },
     methods: {
         scrollTo: function scrollTo(element){
-            let offset = 0;
-            // set mobile offset for header bar on mobile
-            if(window.innerWidth <= 768){
-                offset = -60
-            }
-
+            let offset = -60;
             this.$scrollTo(element, 1000, { easing: 'ease', offset });
         },
         handleScroll(){
@@ -66,44 +61,46 @@ export default {
     background: $secondary;
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 200px auto 200px;
-    grid-template-rows: 100%;
+    align-items: center;
+    // grid-template-columns: 200px auto 200px;
+    // grid-template-rows: 100%;
     @media (max-width: $phone){
-        position:relative;
-        grid-template-columns: 0px auto 0px;
+        // position:relative;
+        // grid-template-columns: 0px auto 0px;
     }
 
     & .showsidebar{
         @media (max-width: $phone){
             right: 0;
             height:100%;
-            border-left:1px solid white;
+            border-left:1px solid $white;
         }
     }
 }
 
 #info-container {
-    grid-area: "info";
-    grid-column: 2 / 3;
-    align-self: center;
+    // grid-area: "info";
+    // grid-column: 2 / 3;
+    // align-self: center;
 }
 
 #mobile-nav-bar{
-    display:none;
+    display:flex;
     position: fixed;
     align-items:center;
-    // grid-template-rows: 60px;
-    // grid-template-columns: 300px 1fr 60px;
     z-index:1;
     width: 100%;
     height:60px;
     background-color:$secondary;
-    border-bottom:1px solid white;
+    border-bottom:1px solid $white;
     transition: all .3s ease;    
 
     &.showname{
         & #name{
             width:300px;
+        }
+        & .button{
+            border-left: 1px solid $white;
         }
     }
 
@@ -113,31 +110,27 @@ export default {
         font-weight:300;
         white-space:nowrap;
         transition: all .3s ease;    
+        cursor:pointer;
     }
 
     & .button{
         flex:1;
         height:100%;
-        color:white;
-        // margin:0 10px;
+        color:$white;
         transition: all .3s ease;    
-    }
-
-    @media(max-width: $phone){
-        display: flex;
     }
 }
 
 #nav-toggle{
     display:none;
     transition: right .5 ease;
-    border-left:1px solid white;
+    border-left:1px solid $white;
     height: 100%;
     width: 60px;
     align-items: center;
     justify-content: center;
     &:active{
-        background-color:white;
+        background-color:$white;
         color:black;
     }
     @media (max-width: $phone){
@@ -176,7 +169,7 @@ export default {
 .nav-link{
     flex:1;
     text-align:right;
-    background:white;
+    background:$white;
     color:$secondary;
     margin-left:50px;
     padding: 10px 10px 10px 0;

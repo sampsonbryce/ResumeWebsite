@@ -7,10 +7,12 @@ import Toast from './plugins/Toast';
 import VueObserveVisibility from 'vue-observe-visibility'
 import ECharts from 'vue-echarts/components/ECharts'
 import 'echarts/lib/chart/bar'
+import VTooltip from 'v-tooltip';
 
 Vue.use(VueObserveVisibility)
 Vue.use(Toast);
 Vue.use(VueScrollTo);
+Vue.use(VTooltip);
 
 Vue.component('icon', Icon);
 Vue.component('v-chart', ECharts);

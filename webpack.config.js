@@ -68,7 +68,7 @@ module.exports = {
                 loader: 'sass-resources-loader',
                 options: {
                   // Provide path to the file with resources
-                  resources: './src/assets/styles/global.scss',
+                  resources: './src/assets/styles/*.scss',
                 }
               }
             ],

@@ -7,9 +7,11 @@
         </div>
         <div id='getting-started'>
             <h3>Getting Started</h3>
-            <p>If you are interested in adding Bryce to your stack then just use this command and it will handle everything for you!</p>
-            <span class='code'>$> ./contact-bryce.sh --priority=high</span>
-            <a id='go-button' class="button" @click='$scrollTo("#contact", 1000)'>Try It!</a>
+            <div class="content">
+                <p>If you are interested in adding Bryce to your stack then just use this command and it will handle everything for you!</p>
+                <span class='code'>$> ./contact-bryce.sh --priority=high</span>
+                <a id='go-button' class="button" @click='$scrollTo("#contact", 1000)'>Try It!</a>
+            </div>
         </div>
         <div id='examples'>
             <h3>Examples</h3>
@@ -17,14 +19,14 @@
                 <div class='example-item'>
                     <h2>HeroHome</h2>
                     <p>Charitable Chrome Extension and Home Page</p>
-                    <a class='example-more-button button with-icon' @click="changeExample(1)">
+                    <a class='example-more-button button with-icon' @click="changeExample(1)" :class="{active: example == 1}">
                         <span v-if="example == 1"><icon name="chevron-up" /></span>
                         <span v-else><icon name="chevron-down" /></span>
                     </a>
 
                     <!-- Duplicate selected item for mobile -->
-                    <div v-if="example == 1" class="selected-example-item mobile">
-                        <a class='button with-icon white' href="https://home.heroinc.io" target="_blank"><icon name="external-link" /></a>
+                    <div class="selected-example-item mobile" :class="{show: example == 1}">
+                        <a class='button with-icon $white' href="https://home.heroinc.io" target="_blank"><icon name="external-link" class="icon"/> home.heroinc.io</a>
                         <p>A very recent example of software built with v4.0, HeroHome is a webpage and Chrome extension intended to be used as a replacement for your New Tab. The page will display ads while you open new tabs and search, all proceeds of which 
                             will be directed to charity. This particular implementation uses Node.js and Express as well as the new Vue.js features implemented in v4.0!
                         </p>
@@ -33,14 +35,14 @@
                 <div class='example-item '>
                     <h2>DayInTheLife Blog</h2>
                     <p>Personal blog with article management tools</p>
-                    <a class='example-more-button button with-icon' @click="changeExample(2)">
+                    <a class='example-more-button button with-icon' @click="changeExample(2)" :class="{active: example == 2}">
                         <span v-if="example == 2"><icon name="chevron-up" /></span>
                         <span v-else><icon name="chevron-down" /></span>
                     </a>
                     <!-- Duplicate selected item for mobile -->
 
-                    <div v-if="example == 2" class="selected-example-item mobile">
-                        <a class='button with-icon white' href="https://github.com/sampsonbryce/DayInTheLife" target="_blank"><icon name="github" /></a>
+                    <div class="selected-example-item mobile"  :class="{show: example == 2}">
+                        <a class='button with-icon $white' href="https://github.com/sampsonbryce/DayInTheLife" target="_blank"><icon name="github" class="icon"/></a>
                         <p>Another more recent expedition into the v4.0 Vue.js feature, DayInTheLife was intended as a blog for the Bryce project. It was built using Node.js and Vue.js, resulting in the features now included in v4.0. Unfortunately the site 
                             had very little popularity and was taken down for cost reasons.
                         </p>
@@ -49,14 +51,14 @@
                 <div class='example-item'>
                     <h2>DataSift Visualization</h2>
                     <p>Visualization of national sentiment towards selected topics</p>
-                    <a class='example-more-button button with-icon' @click="changeExample(3)">
+                    <a class='example-more-button button with-icon' @click="changeExample(3)" :class="{active: example == 3}">
                         <span v-if="example == 3"><icon name="chevron-up" /></span>
                         <span v-else><icon name="chevron-down" /></span>
                     </a>
                     <!-- Duplicate selected item for mobile -->
 
-                    <div v-if="example == 3" class="selected-example-item mobile">
-                        <a class='button with-icon white' href="https://github.com/sampsonbryce/datasift-visualization" target="_blank"><icon name="github" /></a>
+                    <div class="selected-example-item mobile"  :class="{show: example == 3}">
+                        <a class='button with-icon $white' href="https://github.com/sampsonbryce/datasift-visualization" target="_blank"><icon name="github"  class="icon"/></a>
                         <p> Another JavaScript project, DataSift was intended as a prototype for an idea that relied on the DataSift API. It was rather simple but used D3 for the visualization which was new ground for the Bryce build tool.  
                         </p>
                     </div>
@@ -66,8 +68,8 @@
             <!-- Desktop selected items -->
                 <div id='selected-example' class='desktop'>
                     <transition name="uncover">
-                        <div v-if="example == 1" class="selected-example-item ">
-                            <a class='button with-icon white' href="https://home.heroinc.io" target="_blank"><icon name="external-link" /></a>
+                        <div class="selected-example-item " :class="{show: example == 1}">
+                            <a class='button with-icon $white' href="https://home.heroinc.io" target="_blank"><icon name="external-link" /></a>
                             <p>A very recent example of software built with v4.0, HeroHome is a webpage and Chrome extension intended to be used as a replacement for your New Tab. The page will display ads while you open new tabs and search, all proceeds of which 
                                 will be directed to charity. This particular implementation uses Node.js and Express as well as the new Vue.js features implemented in v4.0!
                             </p>
@@ -75,8 +77,8 @@
             </transition>
 
                     <transition name="uncover">
-                    <div v-if="example == 2" class="selected-example-item">
-                        <a class='button with-icon white' href="https://github.com/sampsonbryce/DayInTheLife" target="_blank"><icon name="github" /></a>
+                    <div class="selected-example-item"  :class="{show: example == 2}">
+                        <a class='button with-icon $white' href="https://github.com/sampsonbryce/DayInTheLife" target="_blank"><icon name="github" /></a>
                         <p>Another more recent expedition into the v4.0 Vue.js feature, DayInTheLife was intended as a blog for the Bryce project. It was built using Node.js and Vue.js, resulting in the features now included in v4.0. Unfortunately the site 
                             had very little popularity and was taken down for cost reasons.
                         </p>
@@ -84,8 +86,8 @@
             </transition>
 
                     <transition name="uncover">
-                    <div v-if="example == 3" class="selected-example-item">
-                        <a class='button with-icon white' href="https://github.com/sampsonbryce/datasift-visualization" target="_blank"><icon name="github" /></a>
+                    <div class="selected-example-item" :class="{show: example == 3}">
+                        <a class='button with-icon $white' href="https://github.com/sampsonbryce/datasift-visualization" target="_blank"><icon name="github" /></a>
                         <p> Another JavaScript project, DataSift was intended as a prototype for an idea that relied on the DataSift API. It was rather simple but used D3 for the visualization which was new ground for the Bryce build tool.  
                         </p>
                     </div>
@@ -93,7 +95,7 @@
                 </div>
 
             <div id='more-examples'>
-                <h3>Find more examples and usable code here <a class='button with-icon white' href="https://github.com/sampsonbryce" target="_blank"><icon name="github" /></a></h3>
+                <h4>Find more examples and usable code here <a class='button with-icon $white' href="https://github.com/sampsonbryce" target="_blank"><icon name="github" /></a></h4>
             </div>
         </div>
     </div>
@@ -121,7 +123,7 @@ export default {
             if (old_example != 0 && number != old_example){
                 setTimeout(() => {
                     this.example = number;
-                }, 500)
+                }, 300)
             }
         },
     }
@@ -129,36 +131,23 @@ export default {
 </script> 
 <style lang="scss" scoped>
 
-.slide-enter-active, .slide-enter-leave{
-    transition: all 5s ease;
-}
-.slide-enter, .slide-leave-to{
-    height: 0px;
-}
-.slide-enter-to, .slide-leave{
-    height: 200px;
-}
-
-.uncover-enter-active, .uncover-leave-active{
-    transition: all .5s ease;
-}
-.uncover-enter, .uncover-leave-to{
-    opacity: 0;
-}
-.uncover-enter-to, .uncover-leave{
-    opacity: 1;
-}
-
 .container{
-    background:white;
+    background:$secondary;
 }
+
+h3{
+    color:$primary;
+    font-weight: 200;
+    font-size: 2em;
+}
+
 
 #documentation{
-    color:black;
+    color:$white;
     min-height:100vh;
     display:grid;
-    align-items:center;
-    // grid-template-rows: 30% 70%;
+    justify-items:center;
+    align-content:center;
     @media (max-width: $phone){
         height: auto;
     }
@@ -168,9 +157,24 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width:600px;
+
+    & .content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color:$white;
+        color:$secondary;
+        padding:20px 0 40px 0;
+    }
+
+    @media (max-width: $phone){
+        width:100%;
+    }
 }
 
 .code{
+    color:$secondary;
     display:inline-block;
     width:350px;
     margin-bottom:10px;
@@ -198,7 +202,21 @@ export default {
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 100%;
+    grid-gap:10px;
     flex:1;
+    & .example-item{
+        background-color:$white;
+        color:$secondary;
+        padding-bottom:20px;
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content:space-between;
+        & .active{
+            color:$white;
+            background-color:$secondary;
+        }
+    }
 
     @media (max-width: $phone){
         grid-template-columns: 100%;
@@ -213,17 +231,36 @@ export default {
 }
 
 .selected-example-item{
-    display:grid;
-    justify-items: center;
+    display:flex;
+    height:0px;
+    justify-content:space-around;
+    align-items:center;
+    flex-direction:column;
     overflow:hidden;
-    padding:10px 0;
-    height:auto;
+    transition: all .3s ease;
+    background-color:$white;
+    color:$secondary;
 
-    & p{
-        width:50%;
-        @media(max-width: $phone){
-            width: 90%;
+    & .button{
+        margin:10px;
+        padding-bottom: 10px;
+        & .icon{
+            margin-right: 10px;
+            vertical-align:middle;
         }
+    }
+    & p{
+        width:700px;
+        @media(max-width: $phone){
+            width: 100%;
+            padding:10px;
+        }
+    }
+    &.show{
+        height:200px;
+    }
+    &.mobile.show{
+        height:300px;
     }
 }
 

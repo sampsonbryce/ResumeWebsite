@@ -1,6 +1,7 @@
 <template>
 <div class='container'>
-    <div id='whatsnew' class='section' v-observe-visibility="showChart">
+    <div id='whatsnew' class='section'>
+        <span id='visibility-pixel' v-observe-visibility="showChart"></span>
         <!-- <div>
             <h1 class='large'>WHAT'S NEW?</h1>
             <h3>In v4.0</h3>
@@ -49,7 +50,7 @@ let bigoLabelStyle = {
 
 let tooltipSettings = {
     textStyle: {
-        fontSize: 20,
+        fontSize: 15,
         width:20
     },
     extraCssText: 'width:400px;white-space:normal;',
@@ -78,21 +79,22 @@ export default {
             }
         },
         generateBar(){
-            // console.log('labelStyle: ', labelStyle);
             this.bar = {
-                color: ["white"],
+                color: ["#de4f4f"],
                 title: {
-                    text: "Lanugage Support",
+                    text: "LANGUAGE SUPPORT",
                     left:'center',
                     textStyle: titleTextStyle, 
                 },
                 tooltip:{
-                    trigger: 'item',
+                    trigger: 'axis',
                     axisPointer: {
                         type: 'shadow',
                     },
                 },
                 grid:{
+                    left:"0px",
+                    right: "30px",
                     containLabel: true,
                 },
                 yAxis: {
@@ -183,7 +185,9 @@ export default {
         if(window.innerWidth <= 768){
             bigoLabelStyle.fontSize = 15;
             languageLabelStyle.fontSize = 15;
-            titleTextStyle.fontSize = 20;
+            titleTextStyle.fontSize = 30;
+            tooltipSettings.textStyle.fontSize = 10;
+            tooltipSettings.extraCssText = 'width:200px;white-space:normal;';
         }
 
         this.generateBar();
@@ -193,9 +197,14 @@ export default {
 
 <style lang="scss" scoped>
 .container{
-    background:$primary;
+    background:$white;
+}
+#visibility-pixel{
+    position:absolute;
+    top: 40px;
 }
 #whatsnew{
+    position:relative;
     color: black;
     width:100%;
     min-height:100vh;
@@ -224,7 +233,7 @@ export default {
     margin: 10px;
     padding:10px;
     background: $secondary;
-    color: white;
+    color: $white;
     display:flex;
     flex-direction: column;
     justify-content:space-between;

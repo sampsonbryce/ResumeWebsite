@@ -20,14 +20,14 @@
             </div>
             </div>
             <div id="tabs-content">
-                <div id="DBH" class="tab" v-show="isCurrent('DBH')" >
+                <div id="DBH" class="tab" :class="{show: isCurrent('DBH')}" >
                     <h2>Design By Humans</h2>
                     <h3>Junior Front-End Engineer | v4 | August 2018 - Current</h3>
                     <ul>
                         <li>- Develop web pages based on designer mockups, refactor backend code, and implement new features both customer facing and internal</li>
                     </ul>
                 </div>
-                <div id="WDAY" class="tab" v-show="current_supporter === 'WDAY'">
+                <div id="WDAY" class="tab" :class="{show: isCurrent('WDAY')}">
                     <h2>Workday</h2>
                     <h3>Environment Engineer Intern | v3 | May - August 2017</h3>
                     <ul>
@@ -36,7 +36,7 @@
                         <li>- Shadowed Automation Team, DB Administrators, Performance Team and Network Operations Center</li>
                     </ul>
                 </div>
-                <div id="SHR" class="tab" v-show="current_supporter === 'SHR'">
+                <div id="SHR" class="tab" :class="{show: isCurrent('SHR')}">
                     <h2>SocialHighRise</h2>
                     <h3>Software Developer Intern | v2 | August 2016 - May 2017</h3>
                     <ul>
@@ -44,7 +44,7 @@
                         <li>- Handled development and maintenance of company website</li>
                     </ul>
                 </div>
-                <div id="LLNL" class="tab" v-show="current_supporter === 'LLNL'">
+                <div id="LLNL" class="tab" :class="{show: isCurrent('LLNL')}">
                     <h2>Lawrence Livermore National Laboratory</h2>
                     <h3>Computation Intern | v1 | January 2016 - August 2016</h3>
                     <ul>
@@ -58,13 +58,8 @@
             <div id='version-question'>
                 <div>
                     <h3>Confused by the versions?</h3>
-                    <a @click='(confused ? confused = false : confused = true)'><icon name='question-circle' scale='2'/></a>
+                    <a><icon name='question-circle' scale='2' v-tooltip="{ trigger: 'hover', content: confused}"/></a>
                 </div>
-            </div>
-            <div v-if='confused' id='version-explanation'>
-                <p>Verison are just a fun way to indicate what I learned and when. For example v0.1 is starting college where we were taught C and C++ while v1 was my first internship (Lawrence Livermore) where I learned most of my python knowledge. v2
-                    indicates my second job (SocialHighRise) and v3 inidcates my 3rd (Workday). v4 indicates what version I am currently.
-                </p>
             </div>
         </div>
     </div>
@@ -76,8 +71,8 @@ export default {
     name: "supporters-component",
     data(){
         return {
-            confused: false,
-            current_supporter: "DBH"
+            current_supporter: "DBH",
+            confused: "Verisons are just a fun way to indicate what I learned and when. For example v0.1 is starting college where we were taught C and C++ while v1 was my first internship (Lawrence Livermore) where I learned most of my python knowledge. v2 indicates my second job (SocialHighRise) and v3 inidcates my 3rd (Workday). v4 indicates what version I am currently."
         }
     },
     methods:{
@@ -95,14 +90,12 @@ export default {
 .container{
     background: $secondary;
 }
+
 #supporters{
     min-height: 100vh;
     background: $secondary;
     display:grid;
     align-items:center;
-    @media (max-width: $phone){
-        // height: 1000px;
-    }
 }
 
 #supporters-container{
@@ -150,10 +143,6 @@ export default {
             border-radius: 0 0 0 0;
         }
     }
-    @media(max-width:$phone){
-        grid-template-rows: 100px 100px 100px 100px;
-        align-content:space-between;
-    }
 }
 
 #tabs-content{
@@ -163,23 +152,25 @@ export default {
     height:100%;
     flex:1;
     & .tab{
-        & > * {
-            // margin: 20px 
+        height:0;
+        overflow:hidden;
+        transition:height .3s ease;
+
+        &.show {
+            height:800px;
         }
         & h2{
-            margin:60px 0; 
-            font-size:3em;
-            // line-height:2em;
+            margin:60px 10px; 
+            font-size:2.5em;
             text-align:center;
         }
         & h3{
             color: $secondary;
             font-weight:400;
-            padding-left:30px;
+            margin:0 10px;
         }
         & ul{
-            // list-style-type: disc;
-            margin-left:0;
+            margin-right:10px;
             padding-left:1em;
             text-indent: -1em;
         }

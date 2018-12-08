@@ -51,7 +51,7 @@ export default {
     width:100%;
     height:500px;
     background: $primary;
-    color:white;
+    color:$white;
     display: grid;
     align-items:center;
     padding:10px;
@@ -74,7 +74,7 @@ export default {
     margin: 5px;
     border: 1px solid $secondary;
     background: $secondary;
-    color:white; 
+    color:$white; 
     &:hover{
         background: $primary;
         color:$secondary;

@@ -1,23 +1,23 @@
 <template>
 <div class='container'>
     <div id='qualifications' class='section'>
-        <!-- <div>
-            <h1 class='large'>QUALIFICATIONS</h1>
+        <div>
+            <h1 class='large'>BENCHMARKS</h1>
             <h3>Built to be fast</h3>
-            <p id="about">Since its conception in small town in northern California, Mount Shasta, the goal has always been to build anything and everything with the hopes that one day something would stick and impact the world at large.
+            <!-- <p id="about">Since its conception in small town in northern California, Mount Shasta, the goal has always been to build anything and everything with the hopes that one day something would stick and impact the world at large.
                 Recently that goal has changed slightly. We have shifted towards impacting the world through more noble causes from charitable work to dreams of being part of a space exploration team to benefitting the scientific community through
                 global warming work such as with v1.0. We want to not only change the world but strive to improve the human race while we are at it!
-                </p>
-        </div> -->
+                </p> -->
+        </div>
         <div id='university-container'>
-            <div> 
+            <div class="shadow-2"> 
                 <div id='chico-image'>
                     <img  src="~images/chico.png" />
                 </div>
                 <h1>California State University, Chico California</h1>
                 <h3>Bachelors - Computer Science - Expected June 2019</h3>
             </div>
-            <div> 
+            <div class="shadow-2"> 
                 <div id='linnaeus-image'>
                     <img src="~images/linnaeus-resize.png" />
                 </div>
@@ -44,11 +44,10 @@
 import IOdometer from 'vue-odometer';
 import 'odometer/themes/odometer-theme-default.css';
 
-
 export default {
     name: "qualifications-component",
     components: {
-        IOdometer
+        IOdometer,
     },
     data(){
         return {
@@ -61,7 +60,7 @@ export default {
                     limit: 3.77,
                     value: 0.01
                 }
-            }
+            },
         }
     },
     methods:{
@@ -71,15 +70,15 @@ export default {
                 major.value = major.limit;
                 cummulative.value = cummulative.limit;
             }
-        }
-    },
+        },
+    } 
 }
 </script>
 
 <style lang="scss" scoped>
 
 .container{
-    background: white;
+    background: $primary;
 }
 
 #qualifications{
@@ -93,7 +92,7 @@ export default {
     & h1{
         display: inline-block;
         margin-bottom:0px;
-        color: $primary;
+        color: $white;
         font-weight: 200;
     }
     & h3{
@@ -107,7 +106,7 @@ export default {
     @media (max-width: $phone){
         height: auto;
         grid-template-columns: 100%;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 200px 1fr;
     }
     padding:10px;
 }
@@ -123,6 +122,14 @@ export default {
     align-items: center;
     grid-template-columns: 100%;
     grid-template-rows: 1fr 1fr;
+
+    & h1{
+        color:$primary;
+    }
+    & > div {
+        width:100%;
+        background-color:$white;
+    }
     @media (max-width: $phone){
         grid-template-columns: 100%;
         grid-template-rows: 1fr 1fr;
@@ -156,15 +163,13 @@ export default {
     }
     & div{
         display:grid;
-        // justify-items: center;
-        // align-items: center;
-        // justify-content: space-around;
         & .gpa{
             align-self:end;
             font-size: 10em;
             font-weight:200;
         }
         & .gpa-title{
+            color:$white;
             align-self:start;
         }
     }

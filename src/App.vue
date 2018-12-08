@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <header-component />
-    <qualifications-component />
     <whatsnew-component />
-    <documentation-component />
+    <qualifications-component />
     <supporters-component />
+    <timeline-component />
+    <documentation-component />
     <contact-component />
   </div>
 </template>
@@ -16,6 +17,7 @@ import QualificationsComponent from './components/Qualifications.vue';
 import DocumentationComponent from './components/Documentation.vue';
 import SupportersComponent from './components/Supporters.vue';
 import ContactComponent from './components/Contact.vue';
+import TimelineComponent from './components/Timeline.vue';
 
 export default {
   name: 'app',
@@ -26,6 +28,7 @@ export default {
   components: {
     HeaderComponent,
     QualificationsComponent,
+    TimelineComponent,
     WhatsnewComponent,
     DocumentationComponent,
     SupportersComponent,
