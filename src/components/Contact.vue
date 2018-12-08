@@ -4,23 +4,23 @@
         <h1 class='large'>WANT TO KNOW MORE?</h1>
     </div>
     <div id='button-container'>
-        <a class='button' @click='copyEmail'>
+        <a class='button shadow-2' @click='copyEmail'>
             <icon name='envelope' scale='1.5'/>
             <span class='text' id='email'>sampson.bryce@yahoo.com</span>
         </a>
-        <a class='button' target='_blank' href='https://github.com/sampsonbryce'>
+        <a class='button shadow-2' target='_blank' href='https://github.com/sampsonbryce'>
             <icon name='github-square' scale='1.5' />
             <span class='text'>sampsonbryce</span>
         </a>
-        <a class='button' target='_blank' href='https://github.com/sampsonbryce/LatexResume/blob/master/Resume_Bryce_Sampson_Technical.pdf'>
+        <a class='button shadow-2' target='_blank' href='https://github.com/sampsonbryce/LatexResume/blob/master/Resume_Bryce_Sampson_Technical.pdf'>
             <icon name='file' scale='1.5'/>
             <span class='text'>Resume</span>
         </a>
-        <a class='button' target='_blank' href='https://facebook.com/bryce.sampson.3'>
+        <a class='button shadow-2' target='_blank' href='https://facebook.com/bryce.sampson.3'>
             <icon name='facebook-official' scale='1.5'/>
             <span class='text'>bryce.sampson.3</span>
         </a>
-        <a class='button' target='_blank' href='https://www.linkedin.com/in/bryce-sampson-a497a5b1/'>
+        <a class='button shadow-2' target='_blank' href='https://www.linkedin.com/in/bryce-sampson-a497a5b1/'>
             <icon name='linkedin-square' scale='1.5'/>
             <span class='text'>Bryce Sampson</span>
         </a>

@@ -33,6 +33,17 @@ let titleTextStyle = {
     fontWeight:200,
     fontSize: 40,
 }
+const itemStyle = {
+    shadowColor: 'rgba(0, 0, 0, 0.5)',
+    shadowBlur: 10,
+    shadowOffsetX: 2,
+    shadowOffsetY: 5,
+}
+
+const itemStyleSchool = {
+    ...itemStyle,
+    color:'rgba(10,10,50,1)'
+}
 
 export default {
     name: "timeline-component",
@@ -52,6 +63,36 @@ export default {
                 this.bar = {...this.bar}; //  to trigger update
             }
         },
+        barDateFormatter(params){
+            if(!params.data.months){
+                return "";
+            }
+            let { data: { months }} = params;
+            let time = "";
+            let value = months;
+            if(value >= 12){
+                value /= 12;
+                time = "Year";
+                if(value> 1){
+                    time += "s";
+                }
+            }else{
+                if(window.innerWidth > 768 && value > 3){
+
+                    time = "Month";
+                    if(value > 1){
+                        time += "s";
+                    }
+                }else{
+                    time = "M";
+                    if(window.innerWidth <= 768 && value < 5){
+                        time = "";
+                    }
+                }
+            }
+
+            return `${value} ${time}`;
+        },
         generateBar(){
             this.bar = {
                 color: ["#de4f4f"],
@@ -66,9 +107,19 @@ export default {
                         type : 'shadow'       
                     },
                     formatter: function (params) {
-                        var tar = params[1];
+                        var tar;
+                        if(params[1].data != '-'){
+                            tar = params[1];
+                        }else{
+                            tar = params[2];
+                        }
                         return full_name[tar.name] + '<br/>' + tar.seriesName + ' : ' + tar.value;
                     }
+                },
+                legend: {
+                    left:'70px',
+                    top:'40px',
+                    data: ['School', 'Work']
                 },
                 grid: {
                     left: '40px',
@@ -163,47 +214,51 @@ export default {
                                 color: 'rgba(0,0,0,0)'
                             }
                         },
-                        data: [2018, 2017, 2016, 2015.5, 2014, 2017]
+                        data: [2018, 2016.8, 2016, 2015.5, 2014, 2017]
                     },
                     {
-                        name: 'Years',
+                        name: 'School',
                         type: 'bar',
-                        barwidth:'100%',
+                        barwidth:'80%',
                         stack: 'a',
+                        itemStyle: itemStyleSchool,
                         label: {
                             normal: {
                                 show: true,
                                 position: 'inside',
-                                formatter(params){
-                                    let { data: value } = params;
-                                    let time = "";
-                                    if(value >= 1){
-                                        time = "Year";
-                                        if(value > 1){
-                                            time += "s";
-                                        }
-                                    }else{
-                                        value *= 10;
-                                        if(window.innerWidth > 768){
-
-                                            time = "Month";
-                                            if(value > 1){
-                                                time += "s";
-                                            }
-                                        }else{
-                                            time = "M";
-                                            if(value < 5){
-                                                time = "";
-                                            }
-                                        }
-                                    }
-
-                                    return `${value} ${time}`;
-                                }
+                                formatter: (params) => {return this.barDateFormatter(params); }
                             },
                             
                         },
-                        data:[.9, .3, .9, .5, 5, 1]
+                        data:[
+                            '-',
+                            '-',
+                            '-',
+                            '-',
+                            {value: 4.8, months: 60},
+                            {value: 1, months: 12},
+                        ]
+                    },
+                    {
+                        name: 'Work',
+                        type: 'bar',
+                        barWidth:'80%',
+                        stack: 'a',
+                        itemStyle,
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'inside',
+                                formatter: (params) => {return this.barDateFormatter(params); }
+                            },
+                            
+                        },
+                        data:[
+                            {value: .8, months: 9},
+                            {value: .2, months: 3},
+                            {value: .8, months: 9},
+                            {value: .5, months: 6},
+                        ]
                     }
                 ]
         }

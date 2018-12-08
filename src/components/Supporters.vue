@@ -22,35 +22,82 @@
             <div id="tabs-content">
                 <div id="DBH" class="tab" :class="{show: isCurrent('DBH')}" >
                     <h2>Design By Humans</h2>
-                    <h3>Junior Front-End Engineer | v4 | August 2018 - Current</h3>
+                    <div class="supporter-details shadow-2">
+                        <h3>Junior Front-End Engineer</h3>
+                        <h3>v4</h3>
+                        <h3>August 2018 - Current</h3>
+                    </div>
                     <ul>
-                        <li>- Develop web pages based on designer mockups, refactor backend code, and implement new features both customer facing and internal</li>
+                        <li>- Develop web pages based on designer mockups</li>
+                        <li>- Debug and refactor backend code to increase documentation, modularity, and separation of concerns</li>
                     </ul>
+                    <div class="languages">
+                        <div class="shadow-2">PHP</div>
+                        <div class="shadow-2">Smarty</div>
+                        <div class="shadow-2">JavaScript</div>
+                        <div class="shadow-2">HTML/SCSS</div>
+                        <div class="shadow-2">jQuery</div>
+                    </div>
                 </div>
                 <div id="WDAY" class="tab" :class="{show: isCurrent('WDAY')}">
                     <h2>Workday</h2>
-                    <h3>Environment Engineer Intern | v3 | May - August 2017</h3>
+                    <div class="supporter-details shadow-2">
+                        <h3>Environment Engineer Intern</h3>
+                        <h3>v3</h3>
+                        <h3>May - August 2017</h3>
+                    </div>
                     <ul>
                         <li>- Developed python and bash program for automated client sftp site management(creation/removal/user provisioning)</li>
                         <li>- Supported Sales team with environment cloning and provisioning</li>
                         <li>- Shadowed Automation Team, DB Administrators, Performance Team and Network Operations Center</li>
                     </ul>
+                    <div class="languages">
+                        <div class="shadow-2">Python</div>
+                        <div class="shadow-2">Bash</div>
+                    </div>
                 </div>
                 <div id="SHR" class="tab" :class="{show: isCurrent('SHR')}">
                     <h2>SocialHighRise</h2>
-                    <h3>Software Developer Intern | v2 | August 2016 - May 2017</h3>
+                    <div class="supporter-details shadow-2">
+                        <h3>Software Developer Intern </h3>
+                        <h3>v2</h3>
+                        <h3>August 2016 - May 2017</h3>
+                    </div>
                     <ul>
                         <li>- Developed in-house account management tool to aggregate social media client data</li>
                         <li>- Handled development and maintenance of company website</li>
                     </ul>
+                    <div class="languages">
+                        <div class="shadow-2">ASP.NET MVC</div>
+                        <div class="shadow-2">C#</div>
+                        <div class="shadow-2">Razor</div>
+                        <div class="shadow-2">JavaScript</div>
+                        <div class="shadow-2">HTML/CSS</div>
+                        <div class="shadow-2">jQuery</div>
+                        <div class="shadow-2">WordPress</div>
+                    </div>
                 </div>
                 <div id="LLNL" class="tab" :class="{show: isCurrent('LLNL')}">
                     <h2>Lawrence Livermore National Laboratory</h2>
-                    <h3>Computation Intern | v1 | January 2016 - August 2016</h3>
+                    <div class="supporter-details shadow-2">
+                        <h3>Computation Intern </h3>
+                        <h3>v1</h3>
+                        <h3>January 2016 - August 2016</h3>
+                    </div>
                     <ul>
                         <li>- Developed User Interface in PyQt for the labs large scale climate data processing library</li>
                         <li>- Rebuilt the User Interface in React/Redux (JavaScript provided significantly faster graphics)</li>
                     </ul>
+                    <div class="languages">
+                        <div class="shadow-2">React</div>
+                        <div class="shadow-2">Redux</div>
+                        <div class="shadow-2">PySide Qt</div>
+                        <div class="shadow-2">Python</div>
+                        <div class="shadow-2">HTML/CSS</div>
+                        <div class="shadow-2">JavaScript</div>
+                        <div class="shadow-2">HTML/CSS</div>
+                        <div class="shadow-2">jQuery</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -164,10 +211,21 @@ export default {
             font-size:2.5em;
             text-align:center;
         }
-        & h3{
-            color: $secondary;
-            font-weight:400;
-            margin:0 10px;
+        & .supporter-details{
+            display:flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items:center;
+            font-size:1.2em;
+            line-height:2em;
+            background-color:$secondary;
+            margin: 0 20px;
+            padding:10px 0;
+            color:$white;
+            & h3{
+                font-weight:600;
+                margin:0 10px;
+            }
         }
         & ul{
             margin-right:10px;
@@ -179,9 +237,17 @@ export default {
             margin: 20px;
             font-size:1.2em;
         }
-        & img{
-            height: 100px;
-            
+        & .languages{
+            font-weight:400;
+            color:$secondary;
+            display:flex;
+            flex-wrap:wrap;
+            padding-left:15px;
+            & > div{
+                margin:10px;
+                padding:20px;
+                background-color:white;
+            }
         }
         @media(max-width: $phone){
             width:auto;
@@ -225,15 +291,5 @@ export default {
         }
     }
 
-}
-
-.slide-enter-active, .slide-leave-active{
-    transition: flex 25s ease;
-}
-.slide-enter, .slide-leave-to{
-    flex: 1;
-}
-.slide-enter-to, .slide-leave{
-    flex:0;
 }
 </style>

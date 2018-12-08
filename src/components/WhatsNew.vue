@@ -61,6 +61,13 @@ let titleTextStyle = {
     fontSize: 40,
 }
 
+const itemStyle = {
+    shadowColor: 'rgba(0, 0, 0, 0.5)',
+    shadowBlur: 10,
+    shadowOffsetX: 2,
+    shadowOffsetY: 5,
+}
+
 export default {
     name: "whatsnew-component",
     components:{
@@ -139,37 +146,37 @@ export default {
                     type: "bar",
                     barWidth: "60%",
                     data: [
-                        {value: 40, tooltip: {
+                        {value: 40, itemStyle, tooltip: {
                             ...tooltipSettings,
                             formatter: () => {
                                 return "From Android development to class projects, I just can't seem to escape it!";
                             }}},
-                        {value: 40, tooltip: {
+                        {value: 40, itemStyle, tooltip: {
                             ...tooltipSettings,
                             formatter: () => {
                                 return "Mostly gained from the ASP.Net project at SocialHighRise";
                             }}},
-                        {value: 55, tooltip: {
+                        {value: 55, itemStyle, tooltip: {
                             ...tooltipSettings,
                             formatter: () => {
                                 return "The core language taught at Chico State. From if statements to algorithms, its all been C++";
                             }}},
-                        {value: 60, tooltip: {
+                        {value: 60, itemStyle, tooltip: {
                             ...tooltipSettings,
                             formatter: () => {
                                 return "One of my favorite frameworks. This website is written in it!";
                             }}},
-                        {value: 80, tooltip: {
+                        {value: 80, itemStyle, tooltip: {
                             ...tooltipSettings,
                             formatter: () => {
                                 return "My preferred mobile development choice";
                             }}},
-                        {value: 90, tooltip: {
+                        {value: 90, itemStyle, tooltip: {
                             ...tooltipSettings,
                             formatter: () => {
                                 return "Most of my coding outside of class has been JavaScript and its associated frameworks for web and mobile. I'm familiar with ES6/ES7 syntax as well.";
                             }}},
-                        {value: 90, tooltip: {
+                        {value: 90, itemStyle, tooltip: {
                             ...tooltipSettings,
                             formatter: () => {
                                 return "My go to language for anything and everything. From the quick and dirty script to algorithm practice and anything in between."

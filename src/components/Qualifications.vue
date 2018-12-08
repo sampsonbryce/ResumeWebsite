@@ -1,7 +1,7 @@
 <template>
 <div class='container'>
     <div id='qualifications' class='section'>
-        <div>
+        <div id="title">
             <h1 class='large'>BENCHMARKS</h1>
             <h3>Built to be fast</h3>
             <!-- <p id="about">Since its conception in small town in northern California, Mount Shasta, the goal has always been to build anything and everything with the hopes that one day something would stick and impact the world at large.
@@ -9,30 +9,32 @@
                 global warming work such as with v1.0. We want to not only change the world but strive to improve the human race while we are at it!
                 </p> -->
         </div>
-        <div id='university-container'>
-            <div class="shadow-2"> 
-                <div id='chico-image'>
-                    <img  src="~images/chico.png" />
+        <div id="content">
+            <div id='university-container'>
+                <div class="shadow-3"> 
+                    <div id='chico-image'>
+                        <img  src="~images/chico.png" />
+                    </div>
+                    <h1>California State University, Chico California</h1>
+                    <h3>Bachelors - Computer Science - Expected June 2019</h3>
                 </div>
-                <h1>California State University, Chico California</h1>
-                <h3>Bachelors - Computer Science - Expected June 2019</h3>
-            </div>
-            <div class="shadow-2"> 
-                <div id='linnaeus-image'>
-                    <img src="~images/linnaeus-resize.png" />
+                <div class="shadow-3"> 
+                    <div id='linnaeus-image'>
+                        <img src="~images/linnaeus-resize.png" />
+                    </div>
+                    <h1>Linnaeus University, Vaxjo Sweden </h1>
+                    <h3>2017-2018 Academic Year Abroad</h3>
                 </div>
-                <h1>Linnaeus University, Vaxjo Sweden </h1>
-                <h3>2017-2018 Academic Year Abroad</h3>
             </div>
-        </div>
-        <div id='benchmarks' v-observe-visibility="benchmarksVisible">
-            <div>
-                <IOdometer class="gpa" :value="gpa.major.value" />
-                <p class="gpa-title">Major GPA</p>
-            </div>
-            <div>
-                <IOdometer class="gpa" :value="gpa.cummulative.value" />
-                <p class="gpa-title">Cummulative GPA</p>
+            <div id='benchmarks' v-observe-visibility="benchmarksVisible">
+                <div>
+                    <IOdometer class="gpa" :value="gpa.major.value" />
+                    <p class="gpa-title">Major GPA</p>
+                </div>
+                <div>
+                    <IOdometer class="gpa" :value="gpa.cummulative.value" />
+                    <p class="gpa-title">Cummulative GPA</p>
+                </div>
             </div>
         </div>
     </div>
@@ -85,10 +87,10 @@ export default {
     color: $secondary;
     min-height:100vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100%;
-    justify-items: center;
-    align-items: center;
+    grid-template-rows: 200px 1fr;
+    grid-template-columns: 100%;
+    padding:10px;
+
     & h1{
         display: inline-block;
         margin-bottom:0px;
@@ -98,18 +100,29 @@ export default {
     & h3{
         margin-top:5px;
     }
+    
+    
+    @media (max-width: $phone){
+        height: auto;
+    }
+}
+
+#content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows: 100%;
+    justify-items: center;
+    align-items: center;
     &>div{
         display: grid;
         justify-items: center;
     }
-    
     @media (max-width: $phone){
-        height: auto;
-        grid-template-columns: 100%;
-        grid-template-rows: 200px 1fr;
+        grid-template-columns:100%;
+        grid-template-rows: 1fr 1fr;
     }
-    padding:10px;
 }
+
 #about{
     width:60%;
     @media (max-width: $phone){

@@ -5,7 +5,7 @@
             <p>The New v4.0</p>
             <p>The ultimate build tool! Why? Because it builds stuff. 'Nuff said!</p>
         </div>
-        <div id="mobile-nav-bar" :class="{showname: showName}">
+        <div id="mobile-nav-bar" :class="{showname: showName}" class="shadow-2">
             <h2 id="name" @click='$scrollTo("#header")'>Bryce The Builder</h2>
             <a @click='$scrollTo("#contact", 1000)' class="button">Contact</a>
             <a @click="(showNav ? showNav = false : showNav = true)" id='nav-toggle'><icon name='bars' /></a>
@@ -62,12 +62,7 @@ export default {
     min-height: 100vh;
     display: grid;
     align-items: center;
-    // grid-template-columns: 200px auto 200px;
-    // grid-template-rows: 100%;
-    @media (max-width: $phone){
-        // position:relative;
-        // grid-template-columns: 0px auto 0px;
-    }
+    grid-template-columns:200px 1fr 200px;
 
     & .showsidebar{
         @media (max-width: $phone){
@@ -76,12 +71,15 @@ export default {
             border-left:1px solid $white;
         }
     }
+    @media (max-width: $phone){
+        grid-template-columns:0 1fr 0;
+    }
 }
 
 #info-container {
-    // grid-area: "info";
-    // grid-column: 2 / 3;
-    // align-self: center;
+    grid-area: "info";
+    grid-column: 2 / 3;
+    align-self: center;
 }
 
 #mobile-nav-bar{
