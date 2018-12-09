@@ -95,7 +95,6 @@
                         <div class="shadow-2">Python</div>
                         <div class="shadow-2">HTML/CSS</div>
                         <div class="shadow-2">JavaScript</div>
-                        <div class="shadow-2">HTML/CSS</div>
                         <div class="shadow-2">jQuery</div>
                     </div>
                 </div>
@@ -155,10 +154,11 @@ export default {
     display:flex;
     max-width:800px;
     height:100%;
+    min-height:800px;
 
     @media(max-width:$phone){
         grid-template-columns: 100px 1fr;
-        height:800px;
+        height:1000px;
     }
 }
 
@@ -190,6 +190,9 @@ export default {
             border-radius: 0 0 0 0;
         }
     }
+    @media (max-width: $phone){
+        height:1000px;
+    }
 }
 
 #tabs-content{
@@ -205,6 +208,9 @@ export default {
 
         &.show {
             height:800px;
+            @media (max-width: $phone){
+                height:1000px;
+            }
         }
         & h2{
             margin:60px 10px; 
