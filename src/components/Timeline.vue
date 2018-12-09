@@ -1,10 +1,11 @@
 <template>
-<div class='container'>
-    <span id='visibility-pixel' v-observe-visibility="showChart"></span>
-    <v-chart 
-        class='chart'
-        :options="bar"
-    />
+<div class='container section'>
+        <span id='visibility-pixel' v-observe-visibility="showChart"></span>
+        <h1 class='large'>DEVELOPMENT TIMELINE</h1>
+        <v-chart 
+            class='chart'
+            :options="bar"
+        />
 </div>
 </template>
 
@@ -96,11 +97,11 @@ export default {
         generateBar(){
             this.bar = {
                 color: ["#de4f4f"],
-                title: {
-                    text: "DEVELOPMENT TIMELINE",
-                    left: 'center',
-                    textStyle: titleTextStyle
-                },
+                // title: {
+                //     text: "DEVELOPMENT TIMELINE",
+                //     left: 'center',
+                //     textStyle: titleTextStyle
+                // },
                 tooltip : {
                     trigger: 'axis',
                     axisPointer : {          
@@ -118,13 +119,15 @@ export default {
                 },
                 legend: {
                     left:'70px',
-                    top:'40px',
+                    top:'0px',
                     data: ['School', 'Work']
                 },
                 grid: {
                     left: '40px',
                     right: '30px',
-                    bottom: '3%',
+                    bottom: '40px',
+                    top:'0px',
+                    height:'400px',
                     containLabel: true
                 },
                 yAxis: {
@@ -202,7 +205,6 @@ export default {
                     {
                         name: 'invisible',
                         type: 'bar',
-                        barwidth:'100%',
                         stack:  'a',
                         itemStyle: {
                             normal: {
@@ -275,13 +277,22 @@ export default {
 
 <style lang="scss" scoped>
 .container{
+    display:grid;
+    grid-template-rows: 100px 1fr;
     position:relative;
+    height:700px;
+
     @media (max-width: $phone){
         padding:0 10px;
     }
 }
+h1{
+    color:$secondary;
+    margin:40px 0;
+}
 .chart{
     width:100%;
+    height:500px;
     margin: 50px 0;
 }
 #visibility-pixel{

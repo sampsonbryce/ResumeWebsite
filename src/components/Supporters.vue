@@ -47,7 +47,7 @@
                         <h3>May - August 2017</h3>
                     </div>
                     <ul>
-                        <li>- Developed python and bash program for automated client sftp site management(creation/removal/user provisioning)</li>
+                        <li>- Automated a provisioning process using Python and Bash resulting in an estimated $100,000 savings per year in man hours</li>
                         <li>- Supported Sales team with environment cloning and provisioning</li>
                         <li>- Shadowed Automation Team, DB Administrators, Performance Team and Network Operations Center</li>
                     </ul>
@@ -64,8 +64,8 @@
                         <h3>August 2016 - May 2017</h3>
                     </div>
                     <ul>
-                        <li>- Developed in-house account management tool to aggregate social media client data</li>
-                        <li>- Handled development and maintenance of company website</li>
+                        <li>- Developed an in-house account management tool to aggregate social media client data such as reviews, addresses, contacts, profiles, etc</li>
+                        <li>- Handled development and maintenance of company WordPress website</li>
                     </ul>
                     <div class="languages">
                         <div class="shadow-2">ASP.NET MVC</div>
@@ -85,8 +85,8 @@
                         <h3>January 2016 - August 2016</h3>
                     </div>
                     <ul>
-                        <li>- Developed User Interface in PyQt for the labs large scale climate data processing library</li>
-                        <li>- Rebuilt the User Interface in React/Redux (JavaScript provided significantly faster graphics)</li>
+                        <li>- Took over development of a User Interface in PySide Qt for the labs large scale climate data processing and visualization library</li>
+                        <li>- Rebuilt the User Interface in React/Redux resulting in radically improved rendering times and implementation of complex features such as undo/redo</li>
                     </ul>
                     <div class="languages">
                         <div class="shadow-2">React</div>
@@ -105,7 +105,7 @@
             <div id='version-question'>
                 <div>
                     <h3>Confused by the versions?</h3>
-                    <a><icon name='question-circle' scale='2' v-tooltip="{ trigger: 'hover', content: confused}"/></a>
+                    <a><icon name='question-circle' scale='2' v-tooltip="{ trigger: 'click hover', content: confused}"/></a>
                 </div>
             </div>
         </div>
@@ -119,7 +119,7 @@ export default {
     data(){
         return {
             current_supporter: "DBH",
-            confused: "Verisons are just a fun way to indicate what I learned and when. For example v0.1 is starting college where we were taught C and C++ while v1 was my first internship (Lawrence Livermore) where I learned most of my python knowledge. v2 indicates my second job (SocialHighRise) and v3 inidcates my 3rd (Workday). v4 indicates what version I am currently."
+            confused: "Verisons are just a fun way to indicate what I learned and when. For example v0.1 is starting college where we were taught C and C++ while v1 was my first internship (Lawrence Livermore) where I learned most of my python knowledge. v2 indicates my second job (SocialHighRise) and v3 inidcates my 3rd (Workday). v4 indicates what version I am currently.",
         }
     },
     methods:{
@@ -129,7 +129,7 @@ export default {
         isCurrent(supporter){
             return this.current_supporter === supporter;
         }
-    }
+    },
 }
 </script> 
 
@@ -211,20 +211,28 @@ export default {
             font-size:2.5em;
             text-align:center;
         }
+        &#LLNL h2{
+            font-size:2em;
+            margin:30px 10px; 
+        }
         & .supporter-details{
             display:flex;
             flex-direction: column;
             justify-content:center;
             align-items:center;
-            font-size:1.2em;
+            font-size:1em;
             line-height:2em;
             background-color:$secondary;
             margin: 0 20px;
             padding:10px 0;
             color:$white;
             & h3{
+                text-align:center;
                 font-weight:600;
                 margin:0 10px;
+            }
+            & h3:not(:first-of-type){
+                font-weight:400;
             }
         }
         & ul{
