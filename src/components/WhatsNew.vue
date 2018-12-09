@@ -1,41 +1,47 @@
 <template>
 <div class='container'>
     <div id='whatsnew' class='section'>
-        <span id='visibility-pixel' v-observe-visibility="showChart"></span>
-        <!-- <div>
-            <h1 class='large'>WHAT'S NEW?</h1>
-            <h3>In v4.0</h3>
+        <div class='title'>
+            <h1 class='large'>
+                LANGUAGE SUPPORT
+            </h1>
         </div>
-        <div id='item-container'>
-            <div class="new-item">
-                <img src="~images/python.png" />
-            <p>Building on eleven months of on the job python experience and numerous occasions where quick scripting was effectively applied, v4.0 includes new and improved python language skills for speedy development. 
-            You might wonder "Why Python?". The simple answer is it gets the job done in the shortest amount of time possible!</p>
+        <div class='content'>
+            <span id='visibility-pixel' v-observe-visibility="showChart"></span>
+            <!-- <div>
+                <h1 class='large'>WHAT'S NEW?</h1>
+                <h3>In v4.0</h3>
             </div>
-            <div class="new-item">
-                <img src="~images/javascript.png" />
-                <p>JavaScript has been the main focus of v4.0 since the beginning with a major emphasis on Node.js and Vue.js. In fact, this website was built with Vue.js features now included with v4.0! v1.0 came stock with React.js support which
-                    allowed those utilizing v1.0 to drastically improve performance due to the native speed of JavaScript versus previous attempts at using python. v2.0 resulted in a drastic addition of jQuery capabilites for those not so bleeding edge
-                    projects that still like to do it old school style. Now with Vue.js and continued support for Node.js, anything is possible!
-                </p>
-            </div>
-            <div class="new-item">
-                <img src="~images/cc++.png" />
-                <p>Althought not necessarily new, C and C++ have been a core principal since v0.1, we wanted to solidify our commitment to C and C++. Although it is has been sitting on the sidelines in favor of Python and JavaScript as of late, 
-                    C and C++ remain a vital part of v4.0!</p>
-            </div>
-        </div> -->
-        <v-chart 
-            class='chart'
-            :options="bar"
-        />
+            <div id='item-container'>
+                <div class="new-item">
+                    <img src="~images/python.png" />
+                <p>Building on eleven months of on the job python experience and numerous occasions where quick scripting was effectively applied, v4.0 includes new and improved python language skills for speedy development. 
+                You might wonder "Why Python?". The simple answer is it gets the job done in the shortest amount of time possible!</p>
+                </div>
+                <div class="new-item">
+                    <img src="~images/javascript.png" />
+                    <p>JavaScript has been the main focus of v4.0 since the beginning with a major emphasis on Node.js and Vue.js. In fact, this website was built with Vue.js features now included with v4.0! v1.0 came stock with React.js support which
+                        allowed those utilizing v1.0 to drastically improve performance due to the native speed of JavaScript versus previous attempts at using python. v2.0 resulted in a drastic addition of jQuery capabilites for those not so bleeding edge
+                        projects that still like to do it old school style. Now with Vue.js and continued support for Node.js, anything is possible!
+                    </p>
+                </div>
+                <div class="new-item">
+                    <img src="~images/cc++.png" />
+                    <p>Althought not necessarily new, C and C++ have been a core principal since v0.1, we wanted to solidify our commitment to C and C++. Although it is has been sitting on the sidelines in favor of Python and JavaScript as of late, 
+                        C and C++ remain a vital part of v4.0!</p>
+                </div>
+            </div> -->
+            <v-chart 
+                class='chart'
+                :options="bar"
+            />
 
+        </div>
     </div>
 </div>
 </template>
 
 <script>
-// import ECharts from 'vue-echarts';
 
 let languageLabelStyle = {
     fontSize: 20,
@@ -70,9 +76,6 @@ const itemStyle = {
 
 export default {
     name: "whatsnew-component",
-    // components:{
-    //     'v-chart': ECharts
-    // },
     data(){
         return {
             bar: null,
@@ -85,14 +88,9 @@ export default {
                 this.bar.series = this.series;
             }
         },
-        generateBar(){
+        generateBar(show){
             this.bar = {
                 color: ["#de4f4f"],
-                title: {
-                    text: "LANGUAGE SUPPORT",
-                    left:'center',
-                    textStyle: titleTextStyle, 
-                },
                 tooltip:{
                     trigger: 'axis',
                     axisPointer: {
@@ -100,8 +98,9 @@ export default {
                     },
                 },
                 grid:{
+                    top:"0px",
                     left:"0px",
-                    right: "30px",
+                    right: "35px",
                     containLabel: true,
                 },
                 yAxis: {
@@ -183,11 +182,19 @@ export default {
                             }}
                         }
                         ]
-                }]
+                }];
+
+            // determine if we want to show the chart now or not
+            if(show){
+                this.showChart(true, null)
+            }
         }
         
     },
     created(){
+
+        let show = false;
+
         // set graph styles on mobile
         if(window.innerWidth <= 768){
             bigoLabelStyle.fontSize = 15;
@@ -195,9 +202,10 @@ export default {
             titleTextStyle.fontSize = 30;
             tooltipSettings.textStyle.fontSize = 10;
             tooltipSettings.extraCssText = 'width:200px;white-space:normal;';
+            show = true;
         }
 
-        this.generateBar();
+        this.generateBar(show);
     }
 }
 </script>
@@ -214,7 +222,7 @@ export default {
     position:relative;
     color: black;
     width:100%;
-    min-height:100vh;
+    // min-height:100vh;
     & h1{
         display: inline-block;
     }
@@ -259,6 +267,6 @@ export default {
 .chart {
     width:100%;
     height:100%;
-    min-height:700px;
+    min-height:600px;
 }
 </style>

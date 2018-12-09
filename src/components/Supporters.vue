@@ -1,10 +1,10 @@
 <template>
 <div class='container'>
     <div id='supporters' class='section'>
-        <div>
+        <div class='title'>
             <h1 class='large'>SUPPORTERS</h1>
         </div>
-        <div id="tabs-container">
+        <div id="tabs-container" class='content'>
             <div id='tabs'>
                 <div class='supporter' @mouseover="showSupporter('DBH')" :class="{current: isCurrent('DBH')}">
                     <img src="~images/dbh_logo.svg" />
@@ -136,9 +136,11 @@ export default {
 .container{
     background: $secondary;
 }
+.section{
+    grid-template-rows: 2fr 4fr 1fr;
+}
 
 #supporters{
-    min-height: 100vh;
     background: $secondary;
     display:grid;
     align-items:center;
@@ -155,6 +157,7 @@ export default {
     max-width:800px;
     height:100%;
     min-height:800px;
+    max-height:1200px;
 
     @media(max-width:$phone){
         grid-template-columns: 100px 1fr;

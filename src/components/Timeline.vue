@@ -1,16 +1,19 @@
 <template>
 <div class='container section' id="dev-timeline">
-        <span id='visibility-pixel' v-observe-visibility="showChart"></span>
+    <div class='title'>
         <h1 class='large'>DEVELOPMENT TIMELINE</h1>
+    </div>
+    <div class='content'>
+        <span id='visibility-pixel' v-observe-visibility="showChart"></span>
         <v-chart 
             class='chart'
             :options="bar"
         />
+    </div>
 </div>
 </template>
 
 <script>
-import ECharts from 'vue-echarts';
 import dbh_logo from '../assets/images/dbh_logo.jpg';
 import wday_logo from '../assets/images/wday_logo.png';
 import shr_logo from '../assets/images/shr_logo.jpg';
@@ -56,9 +59,7 @@ const itemStyleSchool = {
 
 export default {
     name: "timeline-component",
-    components: {
-        'v-chart': ECharts
-    },
+
     data(){
         return {
            bar: null,
@@ -102,14 +103,9 @@ export default {
 
             return `${value} ${time}`;
         },
-        generateBar(){
+        generateBar(show){
             this.bar = {
                 color: ["#de4f4f"],
-                // title: {
-                //     text: "DEVELOPMENT TIMELINE",
-                //     left: 'center',
-                //     textStyle: titleTextStyle
-                // },
                 tooltip : {
                     trigger: 'axis',
                     axisPointer : {          
@@ -270,15 +266,24 @@ export default {
                             {value: .5, months: 6},
                         ]
                     }
-                ]
+                ];
+
+            // determine if we want to show the chart now or not
+            if(show){
+                this.showChart(true, null)
+            }
         }
     },
     created(){
+        let show = false;
+
         // set graph styles on mobile
         if(window.innerWidth <= 768){
             titleTextStyle.fontSize = 30;
+            show = true;
         }
-        this.generateBar();
+
+        this.generateBar(show);
     }
 }
 </script>
@@ -286,7 +291,6 @@ export default {
 <style lang="scss" scoped>
 .container{
     display:grid;
-    grid-template-rows: 100px 1fr;
     position:relative;
     height:700px;
 
@@ -296,7 +300,9 @@ export default {
 }
 h1{
     color:$secondary;
-    margin:40px 0;
+}
+.content{
+    position:relative;
 }
 .chart{
     width:100%;

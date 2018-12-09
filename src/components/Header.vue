@@ -1,5 +1,5 @@
 <template>
-    <div id='header'>
+    <div id='header' class='section'>
         <div id='info-container'>
             <h1 class='large'>BRYCE SAMPSON</h1>
             <p>The New v4.0</p>
@@ -60,10 +60,10 @@ export default {
 #header {
     width:100%;
     background: $secondary;
-    min-height: 100vh;
     display: grid;
     align-items: center;
     grid-template-columns:200px 1fr 200px;
+    grid-template-rows:1fr;
 
     & .showsidebar{
         @media (max-width: $phone){

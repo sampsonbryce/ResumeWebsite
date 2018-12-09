@@ -1,7 +1,7 @@
 <template>
 <div class='container'>
     <div id='qualifications' class='section'>
-        <div id="title">
+        <div class="title">
             <h1 class='large'>BENCHMARKS</h1>
             <h3>Built to be fast</h3>
             <!-- <p id="about">Since its conception in small town in northern California, Mount Shasta, the goal has always been to build anything and everything with the hopes that one day something would stick and impact the world at large.
@@ -9,7 +9,7 @@
                 global warming work such as with v1.0. We want to not only change the world but strive to improve the human race while we are at it!
                 </p> -->
         </div>
-        <div id="content">
+        <div class="content">
             <div id='university-container'>
                 <div class="shadow-3"> 
                     <div id='chico-image'>
@@ -73,7 +73,12 @@ export default {
                 cummulative.value = cummulative.limit;
             }
         },
-    } 
+    },
+    created(){
+        if(window.innerWidth <= 768){
+            this.benchmarksVisible(true);
+        }
+    }
 }
 </script>
 
@@ -85,10 +90,6 @@ export default {
 
 #qualifications{
     color: $secondary;
-    min-height:100vh;
-    display: grid;
-    grid-template-rows: 200px 1fr;
-    grid-template-columns: 100%;
     padding:10px;
 
     & h1{
@@ -107,7 +108,7 @@ export default {
     }
 }
 
-#content{
+.content{
     display:grid;
     grid-template-columns:1fr 1fr;
     grid-template-rows: 100%;

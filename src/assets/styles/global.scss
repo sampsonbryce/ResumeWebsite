@@ -16,6 +16,22 @@ $section_width: 1200px;
 }
 .section{
     max-width: $section_width;
+    display:grid;
+    align-items:center;
+    justify-content:center;
+    grid-template-columns:100%;
+    grid-template-rows: 1fr 2fr;
+    min-height:calc(100vh - 60px);
+
+    @media(max-width: $phone){
+        grid-template-rows: 1fr 4fr;
+        min-height:700px;
+    }
+}
+
+.content{
+    width:100%;
+    height:100%;
 }
 
 .button{
@@ -33,6 +49,14 @@ $section_width: 1200px;
     &.with-icon{
         padding:10px 10px 5px 10px;
     }
+
+    &.with-icon-2{
+        padding:15px 5px 13px 5px;
+        & .icon{
+            margin:0 10px;
+        }
+    }
+
 
     &:hover{
         background: $secondary;
