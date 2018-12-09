@@ -47,7 +47,10 @@ $section_width: 1200px;
     padding: 10px;
 
     &.with-icon{
-        padding:10px 10px 5px 10px;
+        padding:10px 10px 8px 10px;
+        & .icon{
+            margin:0 10px;
+        }
     }
 
     &.with-icon-2{

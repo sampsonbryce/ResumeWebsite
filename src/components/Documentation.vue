@@ -70,7 +70,7 @@
                     <div id='selected-example' class='desktop'>
                         <transition name="uncover">
                             <div class="selected-example-item " :class="{show: example == 1}">
-                                <a class='button with-icon' href="https://home.heroinc.io" target="_blank"><icon name="external-link" /></a>
+                                <a class='button with-icon' href="https://home.heroinc.io" target="_blank"><icon name="external-link" class="icon"/>home.heroinc.io</a>
                                 <p>A very recent example of software built with v4.0, HeroHome is a webpage and Chrome extension intended to be used as a replacement for your New Tab. The page will display ads while you open new tabs and search, all proceeds of which 
                                     will be directed to charity. This particular implementation uses Node.js and Express as well as the new Vue.js features implemented in v4.0!
                                 </p>
@@ -236,9 +236,10 @@ h3{
 }
 
 .selected-example-item{
+    display:grid;
     height:0px;
-    align-items:space-between;
-    justify-items:space-between;
+    align-content:center;
+    justify-items:center;
     overflow:hidden;
     transition: height .3s ease;
     background-color:$white;
@@ -272,8 +273,13 @@ h3{
 
 #more-examples{
     flex:1;
+    & h4 {
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+    }
     & .button{
-        display:inline-block;
+        margin-left: 5px;
         border:1px solid $secondary;
         &:hover{
             border:1px solid $white;
