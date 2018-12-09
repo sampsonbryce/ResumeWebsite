@@ -11,15 +11,23 @@
 
 <script>
 import ECharts from 'vue-echarts';
+import dbh_logo from '../assets/images/dbh_logo.jpg';
+import wday_logo from '../assets/images/wday_logo.png';
+import shr_logo from '../assets/images/shr_logo.jpg';
+import llnl_logo from '../assets/images/llnl_logo.jpg';
+import chico_logo from '../assets/images/chico_state_logo.png';
+import linn_logo from '../assets/images/linnaeus_logo.png';
 
 const logo_icons = {
-    DBH: "src/assets/images/dbh_logo.jpg",
-    WDAY: "src/assets/images/wday_logo.png",
-    SHR: "src/assets/images/shr_logo.jpg",
-    LLNL: "src/assets/images/llnl_logo.jpg",
-    CHICO: "src/assets/images/chico_state_logo.png",
-    LINNAEUS: "src/assets/images/linnaeus_logo.png",
+    DBH: dbh_logo,
+    WDAY: wday_logo,
+    SHR: shr_logo,
+    LLNL: llnl_logo,
+    CHICO: chico_logo,
+    LINNAEUS: linn_logo,
 }
+
+
 
 const full_name = {
     DBH: "DesignByHumans",
