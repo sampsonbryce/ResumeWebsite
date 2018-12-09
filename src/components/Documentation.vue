@@ -226,7 +226,6 @@ h3{
 
 #selected-example{
     margin-top: 20px;
-    flex:1;
     overflow:hidden;
 }
 

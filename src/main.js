@@ -4,9 +4,11 @@ import 'vue-awesome/icons';
 import Icon from 'vue-awesome/components/Icon';
 import VueScrollTo from 'vue-scrollto';
 import Toast from './plugins/Toast';
-import VueObserveVisibility from 'vue-observe-visibility'
+import VueObserveVisibility from 'vue-observe-visibility';
 import ECharts from 'vue-echarts/components/ECharts'
-import 'echarts/lib/chart/bar'
+
+import 'echarts/lib/chart/bar';
+import 'echarts/lib/component/tooltip';
 import VTooltip from 'v-tooltip';
 
 Vue.use(VueObserveVisibility)

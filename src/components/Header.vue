@@ -12,10 +12,11 @@
         </div>
         <div id='navigation-container' :class='{ showsidebar : showNav }'>
             <ul>
-                <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#qualifications')">Qualifications</a></li>
-                <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#whatsnew')">What's New?</a></li>
-                <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#documentation')">Documentation</a></li>
+                <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#whatsnew')">Languages</a></li>
+                <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#qualifications')">Benchmarks</a></li>
                 <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#supporters')">Supporters</a></li>
+                <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#dev-timeline')">Dev Timeline</a></li>
+                <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#documentation')">Documentation</a></li>
                 <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#contact')">Contact</a></li>
             </ul>
         </div>
@@ -80,11 +81,13 @@ export default {
     grid-area: "info";
     grid-column: 2 / 3;
     align-self: center;
+    padding: 0 10px;
 }
 
 #mobile-nav-bar{
     display:flex;
     position: fixed;
+    top:0;
     align-items:center;
     z-index:1;
     width: 100%;

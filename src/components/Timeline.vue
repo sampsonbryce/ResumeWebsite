@@ -1,5 +1,5 @@
 <template>
-<div class='container section'>
+<div class='container section' id="dev-timeline">
         <span id='visibility-pixel' v-observe-visibility="showChart"></span>
         <h1 class='large'>DEVELOPMENT TIMELINE</h1>
         <v-chart 

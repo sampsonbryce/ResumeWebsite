@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import ECharts from 'vue-echarts';
+// import ECharts from 'vue-echarts';
 
 let languageLabelStyle = {
     fontSize: 20,
@@ -70,9 +70,9 @@ const itemStyle = {
 
 export default {
     name: "whatsnew-component",
-    components:{
-        'v-chart': ECharts
-    },
+    // components:{
+    //     'v-chart': ECharts
+    // },
     data(){
         return {
             bar: null,
@@ -259,5 +259,6 @@ export default {
 .chart {
     width:100%;
     height:100%;
+    min-height:700px;
 }
 </style>
