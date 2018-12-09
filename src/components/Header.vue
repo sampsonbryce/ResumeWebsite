@@ -1,14 +1,16 @@
 <template>
+<div class='container'>
+    <div id="mobile-nav-bar" :class="{showname: showName}" class="shadow-2">
+        <h2 id="name" @click='$scrollTo("#header")'>Bryce The Builder</h2>
+        <a @click='$scrollTo("#contact", 1000)' class="button">Contact</a>
+        <a @click="(showNav ? showNav = false : showNav = true)" id='nav-toggle'><icon name='bars' /></a>
+    </div>
+
     <div id='header' class='section'>
         <div id='info-container'>
             <h1 class='large'>BRYCE SAMPSON</h1>
             <p>The New v4.0</p>
             <p>The ultimate build tool! Why? Because it builds stuff. 'Nuff said!</p>
-        </div>
-        <div id="mobile-nav-bar" :class="{showname: showName}" class="shadow-2">
-            <h2 id="name" @click='$scrollTo("#header")'>Bryce The Builder</h2>
-            <a @click='$scrollTo("#contact", 1000)' class="button">Contact</a>
-            <a @click="(showNav ? showNav = false : showNav = true)" id='nav-toggle'><icon name='bars' /></a>
         </div>
         <div id='navigation-container' :class='{ showsidebar : showNav }'>
             <ul>
@@ -21,6 +23,7 @@
             </ul>
         </div>
     </div>
+</div>
 </template>
 
 <script>
@@ -57,21 +60,21 @@ export default {
 </script>
 
 <style lang="scss">
-#header {
+.container{
     width:100%;
     background: $secondary;
+    
+}
+
+.section{
     display: grid;
     align-items: center;
+    justify-items:center;
     grid-template-columns:200px 1fr 200px;
     grid-template-rows:1fr;
-
-    & .showsidebar{
-        @media (max-width: $phone){
-            right: 0;
-            height:100%;
-            border-left:1px solid $white;
-        }
-    }
+    width:100%;
+    max-width:none;
+    
     @media (max-width: $phone){
         grid-template-columns:0 1fr 0;
     }
@@ -79,9 +82,9 @@ export default {
 
 #info-container {
     grid-area: "info";
-    grid-column: 2 / 3;
     align-self: center;
     padding: 0 10px;
+    grid-column: 2 / 3;
 }
 
 #mobile-nav-bar{
@@ -143,7 +146,13 @@ export default {
     grid-area: "nav";
     grid-column: 3 / 4;
     align-self: center;
+    justify-self:stretch;
     @media (max-width: $phone){
+        &.showsidebar{
+            right: 0;
+            height:100%;
+            border-left:1px solid $white;
+        }
         & > ul {
             margin-left: 1em;
         }

@@ -1,14 +1,16 @@
 <template>
-<div class='container section' id="dev-timeline">
-    <div class='title'>
-        <h1 class='large'>DEVELOPMENT TIMELINE</h1>
-    </div>
-    <div class='content'>
-        <span id='visibility-pixel' v-observe-visibility="showChart"></span>
-        <v-chart 
-            class='chart'
-            :options="bar"
-        />
+<div class="container">
+    <div class='section' id="dev-timeline">
+        <div class='title'>
+            <h1 class='large'>DEVELOPMENT TIMELINE</h1>
+        </div>
+        <div class='content'>
+            <span id='visibility-pixel' v-observe-visibility="showChart"></span>
+            <v-chart 
+                class='chart'
+                :options="bar"
+            />
+        </div>
     </div>
 </div>
 </template>
@@ -292,11 +294,15 @@ export default {
 .container{
     display:grid;
     position:relative;
-    height:700px;
+    background-color:$white;
+    max-height: 1000px;
 
     @media (max-width: $phone){
         padding:0 10px;
     }
+}
+.section{
+    min-height:0;
 }
 h1{
     color:$secondary;
