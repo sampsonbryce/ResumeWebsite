@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <header-component />
+    <summary-component />
     <whatsnew-component />
     <qualifications-component />
     <supporters-component />
@@ -12,6 +13,7 @@
 
 <script>
 import HeaderComponent from './components/Header.vue';
+import SummaryComponent from './components/Summary.vue';
 import WhatsnewComponent from './components/WhatsNew.vue';
 import QualificationsComponent from './components/Qualifications.vue';
 import DocumentationComponent from './components/Documentation.vue';
@@ -27,6 +29,7 @@ export default {
   },
   components: {
     HeaderComponent,
+    SummaryComponent,
     QualificationsComponent,
     TimelineComponent,
     WhatsnewComponent,
@@ -50,7 +53,7 @@ html,body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: white;
+  color: $white;
   margin: 0;
   display:grid;
   justify-items: center;

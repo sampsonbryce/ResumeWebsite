@@ -303,6 +303,7 @@ export default {
 }
 .section{
     min-height:0;
+    width:100%;
 }
 h1{
     color:$secondary;

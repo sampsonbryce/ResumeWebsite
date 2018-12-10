@@ -14,6 +14,7 @@
         </div>
         <div id='navigation-container' :class='{ showsidebar : showNav }'>
             <ul>
+                <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#summary')">What It Does</a></li>
                 <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#whatsnew')">Languages</a></li>
                 <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#qualifications')">Benchmarks</a></li>
                 <li class="nav-list-item"><a class='nav-link' @click="scrollTo('#supporters')">Supporters</a></li>
@@ -59,7 +60,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .container{
     width:100%;
     background: $secondary;
@@ -73,6 +74,7 @@ export default {
     grid-template-columns:200px 1fr 200px;
     grid-template-rows:1fr;
     width:100%;
+    min-height:100vh; 
     max-width:none;
     
     @media (max-width: $phone){
