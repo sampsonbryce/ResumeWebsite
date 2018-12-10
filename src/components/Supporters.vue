@@ -247,7 +247,7 @@ export default {
         & ul{
             margin-right:10px;
             padding-left:1em;
-            text-indent: -1em;
+            text-indent: -.8em;
         }
         & li{
             display:list-item;
