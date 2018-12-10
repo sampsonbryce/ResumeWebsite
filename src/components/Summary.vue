@@ -6,6 +6,7 @@
             </div>
             <div class='content card-grid'>
                 <div class='card shadow-2' id="description">
+                    <h3 class='shadow-2'>Modern Features</h3>
                     <p>
                         v4.0 of Bryce is focused on the JavaScript world with emphasis on frontend frameworks such as Vue.js and React.js
                     </p>
