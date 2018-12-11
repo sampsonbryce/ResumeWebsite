@@ -1,3 +1,5 @@
+require('intersection-observer'); // polyfill for vue-observe-visibility
+
 import Vue from 'vue';
 import App from './App.vue';
 import 'vue-awesome/icons';
