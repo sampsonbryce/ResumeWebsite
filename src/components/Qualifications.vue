@@ -28,7 +28,7 @@
             </div>
             <div id='benchmarks' v-observe-visibility="benchmarksVisible">
                 <div>
-                    <IOdometer class="gpa" :value="gpa.major.value" />
+                    <IOdometer class="gpa" :value="gpa.major.value" :formatFunction="format"/>
                     <p class="gpa-title">Major GPA</p>
                 </div>
                 <div>
@@ -55,17 +55,20 @@ export default {
         return {
             gpa: {
                 major: {
-                    limit: 3.95,
+                    limit: 3.90,
                     value: 0.01
                 },
                 cummulative: {
-                    limit: 3.77,
+                    limit: 3.55,
                     value: 0.01
                 }
             },
         }
     },
     methods:{
+        format(data){
+            return data.toFixed(2).toString();
+        },
         benchmarksVisible(isVisible, entry){
             if(isVisible){
                 const {major, cummulative} = this.gpa;

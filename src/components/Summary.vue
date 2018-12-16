@@ -8,7 +8,7 @@
                 <div class='card shadow-2' id="description">
                     <h3 class='shadow-2'>Modern Features</h3>
                     <p>
-                        v4.0 of Bryce is focused on the JavaScript world with emphasis on frontend frameworks such as Vue.js and React.js
+                        v4.0 of Bryce is focused on the JavaScript world with emphasis on fullstack web development using frontend frameworks such as Vue.js and React.js with backend focused on Node.js and PHP combined with GraphQL
                     </p>
                     <p>
                         With this comes support for handling mobile projects through the use of React Native

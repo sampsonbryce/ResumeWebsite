@@ -4,6 +4,9 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const resolve = path.resolve;
 
+// get version number
+const __VERSION__ = require("./package.json").version
+
 
 if(process.env.NODE_ENV == 'production'){
 	out_path = '/data/brycethebuilder'
@@ -16,7 +19,7 @@ module.exports = {
   output: {
     path: out_path,
     // publicPath: '/dist/',
-    filename: 'build.js'
+    filename: `build.${__VERSION__}.js`
   },
   plugins:[
     new HtmlWebpackPlugin({
@@ -26,6 +29,9 @@ module.exports = {
         viewport: 'width=device-width,initial-scale=1.0'
       },
       favicon: "./src/assets/images/favicon.png",
+    }),
+    new webpack.DefinePlugin({
+      __VERSION__ // make version number available in bundle if needed
     })
   ],
   module: {
